@@ -1,0 +1,196 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Merienda';
+}
+
+body {
+    background-color: var(--c-color_fondo);
+}
+
+body > div {
+    float: left;
+}
+
+li {
+    list-style: none;
+}
+
+/* HEADER */
+
+div#header {
+    border: 1px solid var(--c-color_borde);
+    width: 93%;
+    height: 13.5vh;
+    margin: 0 auto;
+    padding: 0.7%;
+    margin: 10px 0px 0px 1.8%;
+    border-radius: 16px;
+
+    position: relative;
+}
+
+div#logo {
+    /* border: 1px solid red; */
+    width: 29.1%;
+    height: 90%;
+}
+
+div#logo > img#imagen-logo {
+    width: 21.9%;
+    height: 100%;
+}
+
+div#logo > a#nombre-logo {
+    /* border: 1px solid blue; */
+    display: block;
+    width: 75.4%;
+    font-size: 3vw;
+    font-family: "Trade Winds";
+    color: var(--c-color_logo);  
+    text-decoration: none;
+
+    position: relative;
+    left: 24.4%;
+    top: -90%;
+}
+
+div#datos-usuario {
+    /* border: 1px solid red; */
+    width: 45%;
+    height: 36.8%;
+
+    position: absolute;
+    top: 30%;
+    left: 33%;
+}
+
+div#datos-usuario > * {
+    float: right;
+}
+
+div#datos-usuario > img {
+    border: 1px solid var(--c-color_borde);
+    width: 7%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+div#datos-usuario > span#nombre-usuario {
+    /* width: 100%; */
+    height: 100%;
+    margin: 1.2%;
+    /* position: relative; */
+    /* top: -86%; */
+    /* left: 1%; */
+}
+
+span#nombre-usuario > a,
+span#nombre-usuario > span,
+span#cerrar-sesion,
+a#ver-perfil,
+a#carrito,
+a#gestionar,
+a#usuarios {
+    /* border: 1px solid green; */
+    /* font-family: Merienda; */
+    font-size: 1.3vw;
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+span#nombre-usuario > a:hover,
+span#nombre-usuario > span,
+span#cerrar-sesion:hover,
+a#ver-perfil:hover,
+a#carrito:hover,
+a#gestionar:hover,
+a#usuarios:hover {
+    color: blue;
+}
+
+span#cerrar-sesion {
+    position: absolute;
+    top: -16%;
+    left: 102%;
+}
+
+span#cerrar-sesion:hover {
+    cursor: pointer;
+}
+
+a#ver-perfil,
+a#carrito,
+a#gestionar,
+a#usuarios {
+    text-decoration: none;
+
+    position: absolute;
+    top: 15%;
+    right: 5%;
+}
+
+a#carrito,
+a#usuarios {
+    top: 40%;
+}
+
+a#gestionar {
+    right: 1%;
+}
+
+/* FIN HEADER */
+
+/* FOOTER */
+
+div#footer {
+    border: 1px solid var(--c-color_borde);
+    width: 93%;
+    height: 50vh;
+    padding: 0.7%;
+    margin: 10px 0px 10px 1.8%;
+    border-radius: 16px;
+
+    position: relative;
+}
+
+div#footer > img#img-logo {
+    width: 13%;
+    height: 50%;
+}
+
+div.carousel {
+    /* border: 5px solid black; */
+    width: 60%;
+    height: 100%;
+
+    position: absolute;
+    top: 6%;
+    right: 2%;
+}
+
+div.carousel * img {
+    border-radius: 8px;
+}
+
+img#cambiar-modo {
+    border: 1px solid var(--c-color_borde);
+    border-radius: 50%;
+    width: 4%;
+    height: 8vh;
+
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+}
+
+img#cambiar-modo:hover {
+    cursor: pointer;
+}
+
+/* FIN FOOTER */
+
+div#dialogo-cerrar-sesion,
+div#dialogo-sesion-cerrada {
+    display: none;
+}

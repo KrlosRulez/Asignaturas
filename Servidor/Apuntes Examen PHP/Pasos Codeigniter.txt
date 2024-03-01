@@ -1,0 +1,15 @@
+cambiar env a .env y cambiar CI_ENVIRONMENT de "production" a "development"
+
+En App.php cambiar:
+
+public string $baseURL a "http://localhost/codeigniter/public/";
+
+En Database.php:
+
+poner información sobre la bbdd y las credenciales
+
+En Filters.php para habilitar post:
+
+public $methods = [
+       'post' => ['csrf'],
+];

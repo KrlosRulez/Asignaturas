@@ -1,0 +1,7 @@
+:root {
+    --c-color_fondo: rgb(0, 0, 30); /*Color de Fondo del body */
+    --c-color_texto: white; /* Color de los Textos y de las sombras*/
+    --c-color_borde: white; /* Color del Borde de los Divs */
+    --c-color_tarjetas: rgb(250, 237, 237); /* Color de Fondo de las tarjetas */
+    --c-color_logo: orange;   /* Color del Nombre del logo */
+}

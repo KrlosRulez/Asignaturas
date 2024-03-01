@@ -1,0 +1,150 @@
+table, th, tr, td {
+    border: 1px dotted var(--c-color_borde);
+}
+
+div#contenedor {
+    margin: 1.8% 0% 1.8% 1.8%;
+    width: 94.5%;
+}
+
+div#contenedor-enlace {
+    /* border: 1px solid blue; */
+    width: 60%;
+    height: 5%;
+    margin: 1.8% 0% 0% 1.8%;
+}
+
+a#enlace-volver,
+span#ver-articulos,
+span#ver-imagenes {
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 1.2vw;
+    font-weight: bold;
+    float: left;
+    margin-right: 5%;
+}
+
+a#enlace-volver:hover,
+span#ver-articulos:hover,
+span#ver-imagenes:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+div#contenedor > div {
+    border-radius: 8px;
+}
+
+div#contenedor > div#gestionar-articulos,
+div#contenedor > div#gestionar-imagenes {
+    border: 1px solid var(--c-color_borde);
+    width: 100%;
+    text-align: center;
+    color: var(--c-color_texto);
+    display: none;
+}
+
+div#gestionar-articulos > table#tabla-articulos,
+div#gestionar-imagenes > table#tabla-imagenes {
+    width: 100%;
+}
+
+p.texto-gestionar {
+    font-size: 3vw;
+}
+
+.descripcion-articulo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20%; 
+}
+
+th, td {
+    font-size: 0.8vw;
+}
+
+table#tabla-articulos button {
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8vw;
+}
+
+table#tabla-articulos button:hover {
+    cursor: pointer;
+}
+
+table#tabla-articulos button.formulario-agregar {
+    background-color: dodgerblue;
+    font-size: 1.2vw;
+}
+
+table#tabla-articulos button.formulario-agregar:hover {
+    color: lightblue;
+}
+
+table#tabla-articulos button.editar-articulo {
+    background-color: limegreen;
+}
+
+table#tabla-articulos button.editar-articulo:hover {
+    color: lightgreen;
+}
+
+table#tabla-articulos button.eliminar-articulo {
+    background-color: red;
+}
+
+table#tabla-articulos button.eliminar-articulo:hover {
+    color: lightpink;
+}
+
+p#datos-no-validos,
+p#datos-no-validos-img {
+    color: red;
+}
+
+table#tabla-imagenes td {
+    font-size: 1.6vw;
+}
+
+table#tabla-imagenes button {
+    color: white;
+    border-radius: 4px;
+    font-size: 1vw;
+}
+
+table#tabla-imagenes button:hover {
+    cursor: pointer;
+}
+
+table#tabla-imagenes button#agregar-foto {
+    background-color: dodgerblue;
+    font-size: 1.2vw;
+}
+
+table#tabla-imagenes button#agregar-foto:hover {
+    color: lightblue;
+}
+
+table#tabla-imagenes button.editar-foto {
+    background-color: limegreen;
+}
+
+table#tabla-imagenes button.editar-foto:hover {
+    color: lightgreen;
+}
+
+table#tabla-imagenes button.eliminar-foto {
+    background-color: red;
+}
+
+table#tabla-imagenes button.eliminar-foto:hover {
+    color: lightpink;
+}
+
+table#tabla-imagenes img {
+    width: 40%;
+    height: 40vh;
+}

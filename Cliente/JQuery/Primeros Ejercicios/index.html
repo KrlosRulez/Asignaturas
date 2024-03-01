@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Se Acerca</title>
+    <!-- Enlace a CDN para usar JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+
+        .container {
+            border: 1px solid red;
+        }
+
+    </style>
+
+    <script>
+
+    $(document).ready(function () {
+
+        //$("div");
+
+        //console.log($("div.c2").length);
+
+        //console.log($("div:eq(2), div:gt(2)"));
+
+        //console.log($("ul:has(li[class=prueba])"));
+
+        //console.log($("p:parent"));
+
+        //console.log($(":hidden"));
+
+        let myClass = "lista";
+        let myText = "Solvam";
+
+        var newItem = $("<li>", {
+          class: myClass,
+          text: myText,
+        });
+
+        $("ul").prepend(newItem);
+
+        console.log($("a").attr("href"));
+
+        $("a:first").attr({"href": "https://www.playstation.com"});
+
+        $("a:first").removeAttr("target")
+
+        $(":header").unwrap();
+
+        $(":header").wrap("<div class = 'container'></div>");
+
+        $("li").wrapInner("<b></b>");
+
+    });
+
+    </script>
+
+</head>
+<body>
+
+    <form>
+        <input type="hidden" name="oculto">
+    </form>
+
+    <h1 style="display: none;">H1</h1>
+
+    <div class="container">
+
+        <h1>H1</h1>
+
+        <h2>H2</h2>
+
+        <h5>H5</h5>
+
+    </div>
+
+    <a href="https://www.solvam.es" target="_blank" name="solvam" >Enlace a Solvam</a>
+    
+    <div id="div1" class="c1">
+        <ul>
+            <li>1</li>
+            <li class="prueba">2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <div id="div2" class="c1">Div 2</div>
+    <div id="div3" class="c2">
+        <ul>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+    </div>
+    <p>Betis</p>
+    <div id="div4" class="c2"></div>
+    <div id="div5" class="c3">Div 5</div>
+    <p>España</p>
+
+    <h1>DEM</h1>
+
+    <a href="http://microsoft.com" target="_parent">Visit Microsoft</a>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carousel</title>
+        <style>
+            img {
+                border: 1px solid black;
+                display: block;
+                margin: 0 auto;
+            }
+    
+            #carrusel {
+                padding-left: 240px;
+            }
+    
+            #carrusel img {
+                display: inline;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+
+            $(document).ready(function () {
+
+                $("div#carrusel > img").on("mouseenter", function () {
+
+                    $(this).attr({
+                        width: 180,
+                        height: 180,
+                    });
+
+                });
+
+                $("div#carrusel > img").on("mouseleave", function () {
+
+                    $(this).attr({
+                        width: 150,
+                        height: 150,
+                    });
+
+                });
+
+                var selected_src = "";
+
+                $(".draggable").draggable({
+
+                    revert: true,
+
+                    drag: function() {
+
+                        selected_src = $(this).attr("src");
+
+                    }
+
+                });
+
+                $("#main").droppable({
+
+                    drop: function() {
+
+                        $(this).attr({
+                            src: selected_src,
+                        });
+
+                    }
+
+                });
+
+            });
+
+        </script>
+    </head>
+    <body>
+        
+        <img id="main" src="players/Durant.jpg" width="300" height="400" />
+
+        <br /><br />
+    
+        <div id="carrusel">
+            
+            <img src="players/LeBron.jpg" width="150" height="150" class="draggable" />
+            <img src="players/Wade.jpg" width="150" height="150" class="draggable" />
+            <img src="players/Durant.jpg" width="150" height="150" class="draggable" />
+            <img src="players/Bosh.jpg" width="150" height="150" class="draggable" />
+            <img src="players/Nowitzki.jpg" width="150" height="150" class="draggable" />
+    
+        </div>
+
+    </body>
+</html>

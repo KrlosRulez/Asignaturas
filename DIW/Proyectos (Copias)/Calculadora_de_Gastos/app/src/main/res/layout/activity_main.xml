@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/precio_gasto"
+        android:layout_width="230sp"
+        android:layout_height="70sp"
+        android:layout_marginTop="100dp"
+        android:hint="@string/precio_del_gasto"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColorHint="#A1887F"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/descripcion_gasto"
+        android:layout_width="300sp"
+        android:layout_height="70sp"
+        android:layout_marginTop="200dp"
+        android:hint="@string/descripci_n_del_gasto"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColorHint="#A1887F"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/boton_agregar"
+        android:layout_width="180sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="150dp"
+        android:text="@string/agregar_gasto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion_gasto" />
+
+    <TextView
+        android:id="@+id/total_gastos"
+        android:layout_width="170sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="181dp"
+        android:text="@string/total_de_gastos"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_agregar"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/numero_gastos"
+        android:layout_width="60sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="70dp"
+        android:text="@string/_0"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_agregar"
+        tools:ignore="TextSizeCheck" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="297dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_gastos">
+
+        <TextView
+            android:id="@+id/datos_array"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:translationY="30sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

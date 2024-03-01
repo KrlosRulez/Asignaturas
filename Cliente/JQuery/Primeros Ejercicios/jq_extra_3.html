@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Custom name tags</title>
+        <link rel='stylesheet' href='name_tags.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+
+                var celebrity_names = [];
+
+                for (let i = 0; i < $("div.name-tag").length; i++) {
+
+                    celebrity_names.push(prompt("Enter a celebrity name..."));
+
+                    $(`.name-tag:eq(${i}) > p`).text(celebrity_names[i]);
+
+                }
+
+                var greeting = prompt("Enter a greeting sentence...", "Hello! My name is...")
+
+                $(".name-tag > h1").text(greeting);
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <p>These are the name tags for the party:</p>
+        <div class="name-tag">
+            <h1>Greeting</h1>
+            <p>Name Surname</p>
+        </div>
+        
+        <div class="name-tag">
+            <h1>Greeting</h1>
+            <p>Name Surname</p>
+        </div>
+
+        <div class="name-tag">
+            <h1>Greeting</h1>
+            <p>Name Surname</p>
+        </div>
+    </body>
+</html>

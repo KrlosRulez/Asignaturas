@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        #items {
+            flex: 3.5;
+            padding: 20px;
+        }
+
+        aside {
+            flex: 1.5;
+            background-color: #f0f0f0;
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        .card {
+            width: 270px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            float: left;
+            margin: 5px;
+            padding: 5px;
+            font-family: 'Trebuchet MS';
+            text-align: center;
+        }
+
+        .plusBtn {
+            font-size: 1.5em;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+        }
+
+        #newBtn {
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var car_stuff = [
+                {
+                    id: 1,
+                    name: "Engine Oil ELF Evolution",
+                    price: 13.49,
+                    image: "oil.jpg"
+                },
+                {
+                    id: 2,
+                    name: "Fuel Additive Wynn's 325 ml",
+                    price: 9.89,
+                    image: "additive.jpg"
+                },
+                {
+                    id: 3,
+                    name: "Snow chain G size (x2)",
+                    price: 32.95,
+                    image: "chains.jpg"
+                },
+                {
+                    id: 4,
+                    name: "Battery charger 6V/12V",
+                    price: 28.99,
+                    image: "charger.jpg"
+                },
+                {
+                    id: 5,
+                    name: "Emergency light V16",
+                    price: 14.99,
+                    image: "light.jpg"
+                },
+            ];
+
+            if (!localStorage.getItem("products")) {
+
+                localStorage.setItem("products", JSON.stringify(car_stuff));
+
+            }
+
+            // Display Info
+
+            var next_id = 0;
+
+            function load_info() {
+
+                $("main#items").empty();
+
+                car_stuff = JSON.parse(localStorage.getItem("products"));
+
+                for (let product of car_stuff) {
+
+                    let new_card = $("<div>", {
+                        "class": "card",
+                    });
+
+                    let new_img = $("<img>", {
+                        "src": `img/${product.image}`,
+                    });
+
+                    let new_name = $("<p>", {
+                        "text": product.name,
+                        "class": "name",
+                    });
+
+                    let new_price = $("<p>", {
+                        "text": `${product.price} €`,
+                    })
+
+                    new_card.append(new_img);
+                    new_card.append(new_name);
+                    new_card.append(new_price);
+
+                    new_card.appendTo($("main#items"));
+
+                    if (product.id >= next_id) {
+
+                        next_id = parseInt(product.id) + parseInt(1);
+
+                    }
+
+                }
+
+            }
+
+            load_info();
+
+            // Add Products
+
+            $("button#newBtn").on("click", function () {
+
+                let filled = true;
+
+                $("input").each(function () {
+
+                    if ($(this).val() == "") {
+
+                        filled = false;
+
+                        $(this).attr({
+                            "placeholder": "required",
+                        });
+
+                    } else {
+
+                        $(this).attr({
+                            "placeholder": "",
+                        });
+
+                    }
+
+                });
+
+                if (filled) {
+
+                    car_stuff.push(
+                        {
+                            id: next_id,
+                            name: $("input#productName").val(),
+                            price: $("input#productPrice").val(),
+                            image: "noimage.png"
+                        }
+                    );
+
+                    localStorage.setItem("products", JSON.stringify(car_stuff));
+
+                    $("input#productName").val("");
+                    $("input#productPrice").val("");
+
+                    load_info();
+
+                }
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <main id="items">
+            <!-- space to display product cards -->
+        </main>
+        <aside> <!-- right side column -->
+            <div id="newProdForm"> <!-- Form to add new products -->
+                <form id="productForm">
+                    <table>
+                        <tr>
+                            <td> <label for="productName">Name:</label> </td>
+                            <td> <input type="text" id="productName" name="productName"> </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="productPrice">Price:</label> </td>
+                            <td> <input type="number" id="productPrice" name="productPrice" step="0.01"> </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button type="button" id="newBtn">New Article</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>

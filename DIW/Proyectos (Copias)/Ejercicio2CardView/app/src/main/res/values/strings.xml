@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Ejercicio 2 (CardView)</string>
+    <string name="cerveza_cruzcampo">Cerveza Cruzcampo</string>
+    <string name="picture_of_the_beer">Picture of the beer</string>
+    <string name="la_birra_de_los_que_manejan_maquinaria_pesada">La Birra de los que manejan maquinaria pesada</string>
+    <string name="_6_botellines_a_3_50_me_los_quitan_de_las_manos">6 Botellines a 3,50 € | Me los quitan de las manos</string>
+    <string name="_6_botellines_a_3_50">6 Botellines a 3,50 €</string>
+    <string name="me_los_quitan_de_las_manos">Me los quitan de las manos</string>
+    <string name="estrella_galicia">Estrella Galicia</string>
+    <string name="la_del_bar_del_pueblo">La del bar del pueblo</string>
+    <string name="botell_n_a_80_c_ntimos">Botellín a 80 céntimos</string>
+    <string name="muy_popular_entre_los_jubilados">Muy popular entre los jubilados</string>
+    <string name="heineken_0_0">Heineken 0.0</string>
+    <string name="cerveza_sin_alcohol_para_gente_sin_aspiraciones">Cerveza sin alcohol para gente sin aspiraciones</string>
+    <string name="pack_de_6_por_4_euros">Pack de 6 por 4 euros</string>
+    <string name="la_favorita_de_los_ex_alcoholicos">La favorita de los ex-alcoholicos</string>
+    <string name="mahou_5_estrellas">Mahou 5 estrellas</string>
+    <string name="la_cl_sica">La Clásica</string>
+    <string name="_45_c_ntimos_por_lata">45 céntimos por lata</string>
+    <string name="lo_mejor_para_la_pausa_del_bocadillo">Lo mejor para la pausa del bocadillo</string>
+</resources>

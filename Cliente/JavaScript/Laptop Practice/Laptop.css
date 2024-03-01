@@ -1,0 +1,169 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: 16px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brand {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.model,
+.ram,
+.processor,
+.hard-disk,
+.price {
+  margin: 0px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.remove-button {
+  background-color: #e74c3c; /* Color del botón de eliminación */
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 62%;
+}
+
+.remove-button:hover {
+  background-color: #c0392b; /* Color de fondo cuando se pasa el mouse sobre el botón */
+}
+
+.edit-button {
+  background-color: lime;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.edit-button:hover {
+  background-color: green;
+}
+
+p {
+  color: darkslategray;
+  font-size: 14px;
+}
+
+div#left {
+  width: 20%;
+}
+
+div#right {
+  width: 79%;
+  border-left: 2px dashed red;
+  /*border: 1px solid black;*/
+}
+
+div#cards > div {
+  float: left;
+}
+
+body > div {
+  float: left;
+}
+
+form {
+  background-color: rgb(238, 238, 238);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+#form-add {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select,
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+form#form-edit {
+  display: none;
+} 
+
+div#filters {
+    /*border: 2px solid blue;*/
+    padding: 10px 20px;
+}
+
+p#order-p {
+    font-size: 18px;
+    display: inline;
+}
+
+span#order-brand:hover,
+span#order-ram:hover {
+    cursor: pointer;
+    color: #3498db;
+}
+
+input#max-price,
+button#remove-filters {
+    width: 15%;
+    margin-left: 4%;
+}
+
+select#select-processor {
+  width: 15%;
+}
+
+span#span-processor {
+  margin-left: 5%;
+}
+
+button#remove-filters:hover {
+  cursor: pointer;
+}

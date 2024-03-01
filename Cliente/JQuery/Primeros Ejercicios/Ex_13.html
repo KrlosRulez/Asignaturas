@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 13</title>
+    <style>
+
+        .active {
+            border: 4px dashed red;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("p").on("click", function () {
+
+                $(this).addClass("active");
+
+            });
+
+            $("button#clearActive").on("click", function () {
+
+                $("p").removeClass("active");
+
+            });
+
+            $("button#checkActive").on("click", function () {
+
+                for (p of $("p")) {
+
+                    if (p.classList == "active") {
+
+                        let new_span = $("<span>", {
+                            text: "Active",
+                        });
+
+                        new_span.appendTo(p);
+
+                    }
+
+                }
+
+            });
+
+            $("button#toogleActive").on("click", function () {
+
+                $("p").toggleClass("active");
+
+            });
+
+            $("button#addCSS").on("click", function () {
+
+                $("p[class='active']").css({
+                    "background-color": "lightblue",
+                });
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <button id="clearActive">Clear Active</button>
+
+    <button id="checkActive">Check Active</button>
+
+    <button id="toogleActive">Toogle Active</button>
+
+    <button id="addCSS">Add CSS</button>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper leo diam, vitae fermentum erat
+        lacinia quis. Praesent eget purus ornare, maximus massa eu, ultrices lectus. Aenean id fermentum arcu. Donec non
+        pellentesque nunc. Aliquam ornare vitae lorem ut tempus. Ut nulla mi, commodo eget leo eu, dictum imperdiet
+        urna. Etiam id facilisis elit. Ut auctor arcu sit amet augue varius, non varius felis vulputate. Morbi interdum
+        gravida dui, sit amet pharetra tellus sodales non. Nullam nec nulla vel lorem varius tristique.
+    </p>
+
+    <p>
+        Sed risus mi, iaculis in augue convallis, bibendum viverra purus. Curabitur eget elit et ligula vestibulum
+        euismod ac id lectus. Quisque vitae dictum sem, aliquam suscipit ante. Nulla viverra nulla non tortor faucibus,
+        et viverra est posuere. Nulla lacinia dignissim vulputate. Mauris nec nisl ipsum. Vestibulum id magna at mi
+        auctor dapibus nec quis sem. Aliquam ullamcorper cursus placerat. Maecenas rutrum nec nisi eget feugiat.
+    </p>
+
+    <p>
+        Aliquam in bibendum ipsum, nec vestibulum ante. Nam euismod purus velit, vitae congue dui malesuada et. Duis vel
+        nibh et erat sollicitudin imperdiet. Mauris pellentesque feugiat nunc et mattis. Duis a mi erat. Ut posuere dui
+        sollicitudin eros iaculis, in aliquet justo hendrerit. Vivamus et elit efficitur, sagittis velit ut, placerat
+        lacus. Pellentesque sed nisi diam. Ut vulputate magna id lectus egestas semper. Pellentesque aliquet vulputate
+        est, eget interdum ex gravida vel. Nulla id efficitur purus. Praesent a rutrum tellus. Duis quis nunc nec massa
+        consectetur ultricies non sit amet leo. Nam lacinia vel lacus eget rutrum. Nulla in leo vel est ornare commodo
+        commodo vitae nulla.
+    </p>
+
+    <p>
+        Integer dapibus magna in hendrerit tincidunt. Donec euismod, justo nec sagittis porta, diam nisi blandit dolor,
+        ut gravida sem arcu in nunc. Curabitur vitae sodales arcu. Cras sit amet nisl in magna dictum pharetra. Praesent
+        luctus in quam ut feugiat. Nam porttitor, nibh ut pellentesque semper, sapien augue vehicula tellus, sed rhoncus
+        arcu diam ac arcu. Praesent aliquet nisl eget tincidunt ultricies.
+    </p>
+
+    <p>
+        Nunc eleifend cursus condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+        turpis egestas. In viverra eget augue sit amet posuere. Nulla facilisi. Donec volutpat lectus feugiat dui
+        gravida dapibus. Nulla condimentum lorem eu lacus rhoncus, ac cursus ipsum lobortis. Suspendisse eget varius
+        massa, ut commodo tellus. Curabitur at odio a velit faucibus eleifend vitae vitae risus. Proin mollis, sem at
+        tincidunt finibus, neque eros vehicula odio, id imperdiet nibh libero et lorem.
+    </p>
+
+</body>
+
+</html>

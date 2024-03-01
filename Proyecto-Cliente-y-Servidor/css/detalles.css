@@ -1,0 +1,213 @@
+/* body {
+    height: auto;
+} */
+
+div#contenedor {
+    border: 1px solid var(--c-color_borde);
+    width: 93%;
+    height: 95vh;
+    padding: 0.7%;
+    margin-left: 1.8%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 16px;
+
+    position: relative;
+}
+
+div#contenedor > div#imagen-articulo {
+    border: 1px solid var(--c-color_borde);
+    width: 35%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+div#contenedor > div#imagen-articulo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+div#contenedor > p#nombre-articulo {
+    /* border: 1px solid green; */
+    width: 62%;
+    /* height: 18%; */
+    border-radius: 16px;
+    text-align: center;
+    /* font-family: Merienda; */
+    font-weight: bold;
+    font-size: 3.1vw;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 2%;
+    left: 36.5%;
+}
+
+div#contenedor > p#descripcion-articulo {
+    border-top: 1px dashed var(--c-color_borde);
+    border-bottom: 1px dashed var(--c-color_borde);
+    width: 62%;
+    height: 38%;
+    /* border-radius: 16px; */
+    text-align: center;
+    /* font-family: Merienda; */
+    font-size: 1.1vw;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 22%;
+    left: 36.5%;
+
+    overflow: auto;
+    padding: 0.2%;
+}
+
+div#contenedor > p#plataforma-articulo {
+    /* border: 1px solid green; */
+    width: 28%;
+    border-radius: 8px;
+    /* text-align: center; */
+    /* font-family: Merienda; */
+    font-size: 2vw;
+    font-weight: bold;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 74%;
+    left: 36.5%;
+}
+
+div#contenedor > p#genero-articulo {
+    /* border: 1px solid purple; */
+    width: 26%;
+    border-radius: 8px;
+    /* text-align: center; */
+    /* font-family: Merienda; */
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 84%;
+    left: 36.5%;
+}
+
+div#contenedor > p#fecha-lanzamiento-articulo {
+    /* border: 1px solid yellow; */
+    width: 30%;
+    border-radius: 8px;
+    /* text-align: center; */
+    /* font-family: Merienda; */
+    font-size: 1.6vw;
+    font-weight: bold;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 93%;
+    left: 36.5%;
+}
+
+div#contenedor > p#desarrollador-articulo {
+    /* border: 1px solid blue; */
+    width: 31%;
+    border-radius: 8px;
+    /* text-align: center; */
+    /* font-family: Merienda; */
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 64.5%;
+    left: 36.5%;
+}
+
+div#contenedor > p#stock-articulo {
+    /* border: 1px solid brown; */
+    width: 20%;
+    border-radius: 8px;
+    text-align: right;
+    /* font-family: Merienda; */
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 74%;
+    left: 78.5%;
+}
+
+div#contenedor > p#tipo-articulo {
+    /* border: 1px solid red; */
+    width: 30%;
+    border-radius: 8px;
+    text-align: right;
+    /* font-family: Merienda; */
+    font-size: 1.4vw;
+    font-weight: bold;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 64.6%;
+    left: 68.5%;
+}
+
+div#contenedor > p#precio-articulo {
+    /* border: 1px solid green; */
+    width: 16%;
+    border-radius: 8px;
+    text-align: right;
+    /* font-family: Merienda; */
+    font-size: 3.2vw;
+    font-weight: bold;
+    color: var(--c-color_texto);
+
+    position: absolute;
+    top: 88%;
+    left: 67.5%;
+}
+
+div#contenedor > button#comprar-articulo {
+    /* border: 1px solid green; */
+    width: 14%;
+    border-radius: 8px;
+    text-align: center;
+    /* font-family: Merienda; */
+    font-size: 2.4vw;
+    padding: 0.5% 0%;
+    background-color: dodgerblue;
+    color: white;
+
+    position: absolute;
+    top: 88%;
+    left: 85%;
+}
+
+div#contenedor > button#comprar-articulo:hover {
+    cursor: pointer;
+    color: lightblue;
+}
+
+div#contenedor-enlace {
+    /* border: 1px solid blue; */
+    width: 18%;
+    height: 5%;
+    margin: 1.8% 0% 0% 1.8%;
+}
+
+a#enlace-volver {
+    /* border: 1px solid red; */
+    /* width: 15%; */
+    /* height: 5%; */
+    /* font-family: Merienda; */
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 1.2vw;
+    font-weight: bold;
+    display: block;
+}
+
+a#enlace-volver:hover {
+    color: blue;
+}

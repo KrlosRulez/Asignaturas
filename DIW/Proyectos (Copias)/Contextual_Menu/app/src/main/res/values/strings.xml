@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Contextual_Menu</string>
+    <string name="krlos">Krlos lo Peta</string>
+    <string name="betis">Viva el Betis</string>
+    <string name="pedro">Pedro Sánchez</string>
+    <string name="mant_n_pulsado">Mantén Pulsado</string>
+    <string name="krlos_menu">Krlos</string>
+    <string name="betis_name">Betis</string>
+    <string name="pedro_name">Pedro</string>
+</resources>

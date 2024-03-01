@@ -1,0 +1,7 @@
+:root {
+    --c-color_fondo: #FFFFFF;   /* Color de Fondo del body */
+    --c-color_texto: darkslategrey; /* Color de los Textos y de las sombras*/
+    --c-color_borde: black; /* Color del Borde de los Divs */
+    --c-color_divs: rgb(250, 237, 237); /* Color de Fondo de los divs */
+    --c-color_logo: blue;   /* Color del Nombre del logo */
+}

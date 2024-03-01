@@ -1,0 +1,152 @@
+div#contenedor {
+    border: 1px solid var(--c-color_borde);
+    box-shadow: 0px 0px 5px var(--c-color_texto);
+    width: 40%;
+    /* height: 66vh; */
+    padding: 1% 0%;
+    margin-left: 30%;
+    margin-top: 20px;
+    margin-bottom: 1%;
+    border-radius: 1%;
+
+    position: relative;
+}
+
+div#contenedor > * {
+    margin: 2% 0%;
+}
+
+div#contenedor > p#tipo-formulario {
+    /* border: 1px solid orange; */
+    color: var(--c-color_texto);
+    font-size: 3.5vw;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+div#contenedor > label {
+    /* border: 1px solid orange; */
+    /* font-family: Merienda; */
+    font-size: 2.4vw;
+    font-weight: bold;
+    color: var(--c-color_texto);
+    position: relative;
+    left: 3.8%;
+}
+
+div#contenedor > input {
+    width: 90%;
+    height: 5.5vh;
+    /* font-family: Merienda; */
+    font-size: 1.4vw;
+    position: relative;
+    left: 3.8%;
+}
+
+div#contenedor > p {
+    /* border: 1px solid blue; */
+    width: fit-content;
+    /* font-family: Merienda; */
+    font-size: 1.2vw;
+    color: red;
+    position: relative;
+    /* display: none; */
+    left: 3.8%;
+}
+
+div#contenedor > button#cambiar-form {
+    border: none;
+    /* width: fit-content; */
+    /* font-family: Merienda; */
+    font-size: 1vw;
+    color: dodgerblue;
+    background-color: transparent;
+
+    position: relative;
+    top: 16%;
+    left: 4%;
+}
+
+div#contenedor > button#cambiar-form:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+div#contenedor > button#enviar-form {
+    background-color: lightgrey;
+    width: 30%;
+    height: 6.3vh;
+    color: white;
+    /* font-family: Merienda; */
+    font-size: 1.3vw;
+    border-radius: 4px;
+    
+    position: absolute;
+    bottom: 2%;
+    right: 4%;
+}
+
+div#contenedor > button#enviar-form:hover {
+    cursor: pointer;
+    color: lightblue;
+}
+
+div#contenedor-recordar {
+    /* border: 1px solid blue; */
+    width: 18vw;
+    height: 5vh;
+
+    position: relative;
+    top: 15%;
+    left: 4%;
+}
+
+div#contenedor-recordar > input {
+    width: 10%;
+    height: 4vh;
+    margin-top: 1.5%;
+}
+
+div#contenedor-recordar > span#texto-recordar {
+    /* font-family: Merienda; */
+    font-size: 1.4vw;
+    color: var(--c-color_texto);
+    position: relative;
+    top: -20%;
+}
+
+div#contenedor > button#enviar-form.valido {
+    background-color: dodgerblue;
+}
+
+div#contenedor > button#enviar-form.valido:hover {
+    cursor: pointer;
+    color: lightblue;
+}
+
+div#contenedor > button#enviar-form.no-valido {
+    background-color: lightgrey;
+}
+
+div#contenedor > button#enviar-form.no-valido:hover {
+    cursor: default;
+    color: white;
+}
+
+.ocultar-registro {
+    display: none;
+}
+
+.mostrar-registro {
+    display: inline;
+}
+
+p.mostrar-registro {
+    display: block;
+}
+
+.no-close .ui-dialog-titlebar-close {
+    display: none 
+}

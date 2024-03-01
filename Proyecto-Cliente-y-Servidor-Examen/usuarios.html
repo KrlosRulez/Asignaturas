@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cliente y Servidor - Gestión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Merienda&display=swap">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="js/slick.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="css/modo_claro.css" />
+    <link rel="stylesheet" href="css/modo_oscuro.css" disabled="disabled" />
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/plantillas.css" />
+    <link rel="stylesheet" href="css/usuarios.css" />
+
+    <script src="js/cargar_plantillas.js"></script>
+    <script src="js/cambiar_modo.js"></script>
+    <script src="js/usuarios.js"></script>
+</head>
+
+<body>
+
+    <div id="dialogo-sesion-no-iniciada">
+
+        <p>No tienes permisos para acceder</p>
+
+    </div>
+
+    <div id="dialogo-confirmar-eliminar" title="Confirmar Eliminar">
+
+        <p>¿Quieres eliminar este Usuario?</p>
+
+    </div>
+
+    <div id="dialogo-formulario" title="Gestionar Usuarios">
+
+        <span>Nombre:</span><br /><input type="text" name="nombre" id="input-nombre"><br /><br />
+
+        <p id="error-nombre"></p><br />
+
+        <span>Correo:</span><br /><input type="text" name="correo" id="input-correo"><br /><br />
+
+        <p id="error-correo"></p><br />
+
+        <span>Contraseña:</span><br /><input type="password" name="password" id="input-password"><br /><br />
+
+        <p id="error-password"></p><br />
+
+        <span>Repetir Contraseña:</span><br /><input type="password" name="repetir-password" id="input-repetir-password"><br /><br />
+
+        <p id="error-repetir-password"></p><br />
+
+        <span>Rol:</span><br /><select name="rol" id="select-rol"></select><br /><br />
+
+        <p id="datos-no-validos"></p><br />
+
+        <button id="boton-enviar"></button>
+
+    </div>
+
+    <!-- HEADER -->
+
+    <div id="header"></div>
+
+    <!-- FIN HEADER -->
+
+    <div id="contenedor-enlace">
+
+        <a href="index.html" id="enlace-volver">Volver a la Página Principal</a>
+
+    </div>
+
+    <!-- CONTENEDOR -->
+
+    <div id="contenedor">
+
+        <div id="gestionar-usuarios">
+
+            <p class="texto-gestionar">Gestionar Usuarios</p>
+
+            <table id="tabla-usuarios">
+
+                <tbody>
+
+                    
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- FIN CONTENEDOR -->
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+
+    <!-- FIN FOOTER -->
+
+</body>
+
+</html>

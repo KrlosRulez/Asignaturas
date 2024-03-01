@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paging</title>
+    <script>
+      window.onload = function () {
+        var libros = [
+          {
+            title: "El Señor de los Anillos",
+            author: "J.R.R. Tolkien",
+            read: true,
+            year: 1954,
+            image: "images/image1.jpg",
+          },
+          {
+            title: "Cien años de soledad",
+            author: "Gabriel García Márquez",
+            read: false,
+            year: 1967,
+            image: "images/image2.jpg",
+          },
+          {
+            title: "Don Quijote de la Mancha",
+            author: "Miguel de Cervantes",
+            read: true,
+            year: 1605,
+            image: "images/image3.jpg",
+          },
+          {
+            title: "Harry Potter y la piedra filosofal",
+            author: "J.K. Rowling",
+            read: false,
+            year: 1997,
+            image: "images/image4.jpg",
+          },
+          {
+            title: "Orgullo y prejuicio",
+            author: "Jane Austen",
+            read: false,
+            year: 1813,
+            image: "images/image1.jpg",
+          },
+          {
+            title: "Crónica de una muerte anunciada",
+            author: "Gabriel García Márquez",
+            read: true,
+            year: 1981,
+            image: "images/image2.jpg",
+          },
+          {
+            title: "El gran Gatsby",
+            author: "F. Scott Fitzgerald",
+            read: false,
+            year: 1925,
+            image: "images/image3.jpg",
+          },
+          {
+            title: "Matar a un ruiseñor",
+            author: "Harper Lee",
+            read: true,
+            year: 1960,
+            image: "images/image4.jpg",
+          },
+          {
+            title: "1984",
+            author: "George Orwell",
+            read: false,
+            year: 1949,
+            image: "images/image5.jpg",
+          },
+          {
+            title: "Cien años de soledad",
+            author: "Gabriel García Márquez",
+            read: false,
+            year: 1967,
+            image: "images/image2.jpg",
+          },
+          {
+            title: "Don Quijote de la Mancha",
+            author: "Miguel de Cervantes",
+            read: true,
+            year: 1605,
+            image: "images/image3.jpg",
+          },
+          {
+            title: "Orgullo y prejuicio",
+            author: "Jane Austen",
+            read: false,
+            year: 1813,
+            image: "images/image1.jpg",
+          },
+          {
+            title: "Crónica de una muerte anunciada",
+            author: "Gabriel García Márquez",
+            read: true,
+            year: 1981,
+            image: "images/image2.jpg",
+          },
+          {
+            title: "El gran Gatsby",
+            author: "F. Scott Fitzgerald",
+            read: false,
+            year: 1925,
+            image: "images/image3.jpg",
+          },
+          {
+            title: "Matar a un ruiseñor",
+            author: "Harper Lee",
+            read: true,
+            year: 1960,
+            image: "images/image4.jpg",
+          },
+          {
+            title: "1984",
+            author: "George Orwell",
+            read: false,
+            year: 1949,
+            image: "images/image5.jpg",
+          },
+        ];
+
+        // Saber cuantas páginas hay (depende del Nº de elementos por página y deltotal de elementos)
+
+        var elementsPerPage = 3;
+        var currentPage = 1;
+
+        var pageNumber = Math.ceil(libros.length / elementsPerPage);
+
+        console.log(pageNumber);
+
+        var info = document.getElementById("page-info");
+        info.innerText = `${currentPage} / ${pageNumber}`;
+
+        var backButton = document.getElementById("back");
+        var nextButton = document.getElementById("next");
+
+        // Saber que libros mostrar (subconjunto del array de libros)
+
+        // Usar el método slice para sacar un nuevo array
+
+        // Para la página 1 será books.slice(0,4)
+
+        // Para la página 2 será books.slice(5,9)
+        // Para la página 3 será books.slice(10,14)
+
+        // Inicio: (currentPage - 1) * elementsPerPage
+        // Fin: (Inicio + elementsPerPage - 1)
+
+        function getSlice(page) {
+          var startSlice = (page - 1) * elementsPerPage;
+          var endSlice = startSlice + elementsPerPage;
+
+          return libros.slice(startSlice, endSlice);
+
+          console.log(startSlice);
+        }
+
+        // Función de dibujo de subconjunto de libros
+        // Escribir título que diga en que página estamos
+        // Vaciar el área en que están todos los libros anteriores
+        // Dibujar con un bucle el subconjunto actual de libros
+        // Crear un clon de la plantilla
+        // Rellenaremos cada elemento de la plantilla con info de cada libro
+        // Añadir esa tarjeta al área de libros
+        // Pasar al siguiente libro
+
+        var bookList = document.querySelector("#book-list");
+        var bookTemplate = document.getElementById("book-template").content;
+
+        function drawCards(bookArray) {
+          bookList.innerHTML = "";
+
+          bookArray.forEach(function (bookData) {
+
+            const myBook = bookTemplate.cloneNode(true);
+
+            var myTitle = myBook.querySelector(".title");
+
+            myTitle.innerText = bookData.title;
+
+            var myAuthor = myBook.querySelector(".author");
+
+            myAuthor.innerText = bookData.author;
+
+            var myYear = myBook.querySelector(".year");
+
+            myYear.innerText = bookData.year;
+
+            bookList.appendChild(myBook);
+
+          });
+
+          info.innerText = `${currentPage} / ${pageNumber}`;
+
+          manageButtons();
+
+        }
+
+        drawCards(getSlice(currentPage));
+
+        // Al pulsar el botón siguiente:
+        // - Aumentar el número de página actual
+        // - Redibujar los libros llamando a la funcción de dibujo
+
+        function nextPage () {
+
+          currentPage += 1;
+          drawCards(getSlice(currentPage));
+
+        }
+
+        function backPage () {
+
+        currentPage -= 1;
+        drawCards(getSlice(currentPage));
+
+        }
+
+        nextButton.addEventListener("click", nextPage);
+        backButton.addEventListener("click", backPage);
+
+        // Los botones tienen que deshabilitarse al llegar a los extremos
+
+        function manageButtons() {
+
+          if (currentPage == 1) {
+
+            backButton.setAttribute("disabled", true);
+
+          } else {
+
+            backButton.removeAttribute("disabled");
+
+          }
+
+          if (currentPage == pageNumber) {
+
+            nextButton.setAttribute("disabled", true);
+
+          } else {
+
+            nextButton.removeAttribute("disabled");
+
+          }
+
+        }
+
+      };
+    </script>
+    <style>
+
+      div.book {
+        border: 1px solid black;
+        width: 300px;
+        height: 160px;
+        float: left;
+        margin: 20px;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section>
+      <div id="controls">
+        <button id="back"><</button>
+        <span id="page-info"></span>
+        <button id="next">></button>
+      </div>
+      <div id="book-list"></div>
+    </section>
+
+    <template id="book-template">
+      <div class="book">
+        <h2 class="title">Book Title</h2>
+        <h3 class="author">By Author</h3>
+        <p class="year">2023</p>
+      </div>
+    </template>
+  </body>
+</html>

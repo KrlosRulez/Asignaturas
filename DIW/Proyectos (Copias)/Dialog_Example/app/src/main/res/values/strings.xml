@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Dialog_Example</string>
+    <string name="di_logo_simple">Diálogo Simple</string>
+    <string name="nombre">Nombre</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="recordar_datos">Recordar datos</string>
+    <string name="ok">OK</string>
+    <string name="di_logo_personalizado">Diálogo Personalizado</string>
+</resources>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 36</title>
+    <style>
+
+        img {
+            width: 250px;
+            height: 250px;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("p#p-1").text(`Background Color: ${JSON.parse(localStorage.getItem("preferences"))["bg-color"]}`);
+            $("p#p-2").text(`Font: ${JSON.parse(localStorage.getItem("preferences"))["font"]}`);
+            $("p#p-3").text(`Avatar: ${JSON.parse(localStorage.getItem("preferences"))["avatar"]}`);
+
+            $("img#avatar").attr({
+                "src": `players/${JSON.parse(localStorage.getItem("preferences"))["avatar"]}`,
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <p id="p-1"></p>
+    <p id="p-2"></p>
+    <p id="p-3"></p>
+
+    <img id="avatar" />
+
+</body>
+
+</html>

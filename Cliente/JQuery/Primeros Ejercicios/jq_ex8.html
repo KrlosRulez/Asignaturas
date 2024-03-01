@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>The Avengers</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      // 6.
+
+      $("button").insertBefore("p:first");
+
+      // 9.
+
+      var new_p = $("<p>", {
+        text: $("p").text(),
+      });
+
+      $(new_p).insertAfter("div:first");
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <div id="box">
+    <p id="description">jQuery is so awesome!</p>
+    <button id="first-btn">I'm a button</button>
+    <p id="adv">DWEC rocks!</p>
+    <button id="second-btn">Click me</button>
+  </div>
+</body>
+
+</html>

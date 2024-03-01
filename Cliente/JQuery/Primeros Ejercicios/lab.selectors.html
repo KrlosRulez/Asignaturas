@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>jQuery Selectors Lab Page</title>
+  <link rel="stylesheet" type="text/css" href="resources/core.css">
+  <style type="text/css">
+    div#selectorPane {
+      float: left;
+      width: 320px;
+    }
+
+    input#selectorField {
+      width: 90%;
+    }
+
+    div#samplePane {
+      float: right;
+      width: 380px;
+    }
+
+    div#sampleDOM {
+      background-color: white;
+    }
+
+    div#codePane {
+      clear: both;
+    }
+
+    div#sampleDOMCode pre {
+      background-color: white;
+    }
+
+    div#resultsPane {
+      margin-top: 12px;
+      display: none;
+    }
+
+    span#jqueryStatement {
+      color: maroon;
+      font-family: monospace;
+    }
+
+    .wrappedElement {
+      border: 1px solid red;
+      background-color: pink;
+    }
+
+    img.wrappedElement {
+      border-width: 2px;
+    }
+
+    div.buttonBar {
+      margin-top: 8px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="resources/jqia2.support.js"></script>
+  <script type="text/javascript" src="resources/elements.js"></script>
+  <script type="text/javascript">
+    $(function () {
+
+      $.get(
+        'dom.sample.html',
+        function (data) {
+          $('#sampleDOM').html(data);
+          $('#sampleDOMCode pre').html(data.replace(/</g, '&lt;').replace(/>/g, '&gt;'));
+        });
+
+      $('form#selectorForm').submit(function () {
+        $('#resultsPane').hide();
+        $('.wrappedElement', '#sampleDOM').removeClass('wrappedElement');
+        $('#resultingElements').html('');
+        var selector = $.trim($('#selectorField').val());
+        if (selector.length == 0) return false;
+        var wrappedSet;
+        if (selector.substring(0, 1) == '$') {
+          wrappedSet = eval(selector);
+        } else {
+          wrappedSet = $(selector, '#sampleDOM');
+        }
+        if (wrappedSet.length == 0) {
+          alert('Nothing found which matches ' + selector);
+          return false;
+        }
+        wrappedSet.addClass('wrappedElement');
+        $('#jqueryStatement').html('$("' + selector + '").addClass("wrappedElement");');
+        var elements = wrappedSet.elementsForDisplay();
+        var labelText = elements.length + ' matching element' + (elements.length == 1 ? '' : 's') + ':';
+        $('label[for=resultingElements]').html(labelText);
+        $.each(elements, function () {
+          $('#resultingElements').append($('<div>' + this + '</div>'));
+        });
+        $('#resultsPane').css('opacity', 1);
+        $('#resultsPane').fadeIn('slow');
+        return false;
+      });
+
+    });
+  </script>
+</head>
+
+<body class="fancy">
+
+  <div id="pageContainer">
+    <div id="pageContent">
+
+      <h1>jQuery Selectors Lab Page <span style="font-size:11px">from jQuery in Action by Bibeault and Katz</span> </h1>
+
+      <div class="module" id="selectorPane">
+        <div data-module="Selector" data-module-id="selectorPane" class="body" style="width:300px">
+          <form id="selectorForm" action="lab.selectors.html">
+
+            <p>Type a selector into the text field below and press the Apply button. Enter either the full jQuery
+              selector
+              ( $('&lt;selector&gt;') or the just the css selector.</p>
+
+            <label for="selectorField">Selector:</label><br>
+            <!--textarea id="selectorField" rows="3"></textarea><br/-->
+            <input type="text" id="selectorField">
+
+            <div class="buttonBar">
+              <button type="submit" class="green90x24">Apply</button>
+            </div>
+
+          </form>
+
+          <div id="resultsPane">
+            <p>
+              <label for="jqueryStatement">jQuery statement:</label><br>
+              <span id="jqueryStatement"></span>
+            </p>
+            <p>
+              <label for="resultingElements">X</label>
+            </p>
+            <div id="resultingElements"></div>
+            <p></p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="module" id="samplePane">
+        <div data-module="DOM Sample" data-module-id="samplePane" class="body" style="width:360px">
+          <div id="sampleDOM">
+            <div><label>Some images:</label></div>
+            <div>
+              <img src="./resources/image.1.jpg" id="hibiscus" alt="Hibiscus">
+              <img src="./resources/image.2.jpg" id="littleBear" title="A dog named Little Bear">
+              <img src="./resources/image.3.jpg" id="verbena" alt="Verbena">
+              <img src="./resources/image.4.jpg" id="cozmo" title="A puppy named Cozmo">
+              <img src="./resources/image.5.jpg" id="tigerLily" alt="Tiger Lily">
+              <img src="./resources/image.6.jpg" id="coffeePot">
+            </div>
+
+            <div id="someDiv">This is a &lt;div&gt; with an id of <tt>someDiv</tt></div>
+            <div title="myTitle1"><span>Hello</span></div>
+            <div title="myTitle2"><span>Goodbye</span></div>
+
+            <ul class="myList">
+              <li><a href="http://jquery.com/">jQuery supports</a>
+                <ul>
+                  <li><a href="css1">CSS1</a></li>
+                  <li><a href="css2">CSS2</a></li>
+                  <li><a href="css3">CSS3</a></li>
+                  <li>Basic XPath</li>
+                </ul>
+              </li>
+              <li>jQuery also supports
+                <ul>
+                  <li>Custom selectors</li>
+                  <li>Form selectors</li>
+                </ul>
+              </li>
+            </ul>
+
+            <table id="languages" border="0" cellspacing="1">
+              <thead>
+                <tr>
+                  <th>Language</th>
+                  <th>Type</th>
+                  <th>Invented</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Java</td>
+                  <td>Static</td>
+                  <td>1995</td>
+                </tr>
+                <tr>
+                  <td>Ruby</td>
+                  <td>Dynamic</td>
+                  <td>1993</td>
+                </tr>
+                <tr>
+                  <td>Smalltalk</td>
+                  <td>Dynamic</td>
+                  <td>1972</td>
+                </tr>
+                <tr>
+                  <td>C++</td>
+                  <td>Static</td>
+                  <td>1983</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <form action="lab.selectors.html" method="put" onsubmit="return false;">
+              <div>
+                <label>Text:</label> <input type="text" id="aTextField" name="someTextField">
+              </div>
+              <div>
+                <label>Radio group:</label>
+                <input type="radio" name="radioGroup" id="radioA" value="A"> A
+                <input type="radio" name="radioGroup" id="radioB" value="B" checked="checked"> B
+                <input type="radio" name="radioGroup" id="radioC" value="C"> C
+              </div>
+              <div>
+                <label>Checkboxes:</label>
+                <input type="checkbox" name="checkboxes" id="checkbox1" value="1"> 1
+                <input type="checkbox" name="checkboxes" id="checkbox2" value="2"> 2
+                <input type="checkbox" name="checkboxes" id="checkbox3" value="3" checked="checked"> 3
+                <input type="checkbox" name="checkboxes" id="checkbox4" value="4"> 4
+              </div>
+              <button type="submit" id="submitButton">Submit</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module" id="codePane">
+      <div data-module="DOM Sample Code" data-module-id="codePane" class="body">
+        <div id="sampleDOMCode">
+          <pre>&lt;div&gt;&lt;label&gt;Some images:&lt;/label&gt;&lt;/div&gt;
+&lt;div&gt;
+  &lt;img src="images/image.1.jpg" id="hibiscus" alt="Hibiscus"/&gt;
+  &lt;img src="images/image.2.jpg" id="littleBear" title="A dog named Little Bear"/&gt;
+  &lt;img src="images/image.3.jpg" id="verbena" alt="Verbena"/&gt;
+  &lt;img src="images/image.4.jpg" id="cozmo" title="A puppy named Cozmo"/&gt;
+  &lt;img src="images/image.5.jpg" id="tigerLily" alt="Tiger Lily"/&gt;
+  &lt;img src="images/image.6.jpg" id="coffeePot"/&gt;
+&lt;/div&gt;
+
+&lt;div id="someDiv"&gt;This is a &lt;div&gt; with an id of &lt;tt&gt;someDiv&lt;/tt&gt;&lt;/div&gt;
+&lt;div title="myTitle1"&gt;&lt;span&gt;Hello&lt;/span&gt;&lt;/div&gt;
+&lt;div title="myTitle2"&gt;&lt;span&gt;Goodbye&lt;/span&gt;&lt;/div&gt;
+
+&lt;ul class="myList"&gt;
+  &lt;li&gt;&lt;a href="http://jquery.com"&gt;jQuery supports&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="css1"&gt;CSS1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="css2"&gt;CSS2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="css3"&gt;CSS3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Basic XPath&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;jQuery also supports
+    &lt;ul&gt;
+      &lt;li&gt;Custom selectors&lt;/li&gt;
+      &lt;li&gt;Form selectors&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table id="languages" border="0" cellspacing="1"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Language&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Invented&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Java&lt;/td&gt;
+      &lt;td&gt;Static&lt;/td&gt;
+      &lt;td&gt;1995&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ruby&lt;/td&gt;
+      &lt;td&gt;Dynamic&lt;/td&gt;
+      &lt;td&gt;1993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Smalltalk&lt;/td&gt;
+      &lt;td&gt;Dynamic&lt;/td&gt;
+      &lt;td&gt;1972&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;C++&lt;/td&gt;
+      &lt;td&gt;Static&lt;/td&gt;
+      &lt;td&gt;1983&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;form action="" method="put" onsubmit="return false;"&gt;
+  &lt;div&gt;
+    &lt;label&gt;Text:&lt;/label&gt; &lt;input type="text" id="aTextField" name="someTextField"/&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;Radio group:&lt;/label&gt;
+    &lt;input type="radio" name="radioGroup" id="radioA" value="A"/&gt; A
+    &lt;input type="radio" name="radioGroup" id="radioB" value="B" checked="checked"/&gt; B
+    &lt;input type="radio" name="radioGroup" id="radioC" value="C"/&gt; C
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;Checkboxes:&lt;/label&gt;
+    &lt;input type="checkbox" name="checkboxes" id="checkbox1" value="1"/&gt; 1
+    &lt;input type="checkbox" name="checkboxes" id="checkbox2" value="2"/&gt; 2
+    &lt;input type="checkbox" name="checkboxes" id="checkbox3" value="3" checked="checked"/&gt; 3
+    &lt;input type="checkbox" name="checkboxes" id="checkbox4" value="4"/&gt; 4
+  &lt;/div&gt;
+  &lt;button type="submit" id="submitButton"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">jQuery in Action, 2nd edition, sample code<br>Bear Bibeault and Yehuda Katz</div>
+
+  </div>
+  </div>
+
+  <div id="console"></div>
+</body>
+
+</html>

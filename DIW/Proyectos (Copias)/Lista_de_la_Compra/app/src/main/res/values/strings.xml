@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lista_de_la_Compra</string>
+    <string name="rojo">Rojo</string>
+    <string name="azul">Azul</string>
+    <string name="verde">Verde</string>
+    <string name="special_switch">Switch</string>
+    <string name="leche">Leche</string>
+    <string name="pan">Pan</string>
+    <string name="manzanas">Manzanas</string>
+    <string name="pasta">Pasta</string>
+    <string name="comprar">Comprar</string>
+</resources>

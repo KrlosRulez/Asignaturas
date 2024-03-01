@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercise 9</title>
+        <script src="Ex_9.js"></script>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <style>
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+            }
+
+            .container {
+                display: flex;
+                height: 100%;
+            }
+
+            #items {
+                flex: 3.5;
+                padding: 20px;
+            }
+
+            aside {
+                flex: 1.5;
+                background-color: #f0f0f0;
+                padding: 20px;
+                font-family: Arial;
+            }
+
+            .card {
+                width: 270px;
+                border: 1px solid lightgray;
+                border-radius: 10px;
+                float: left;
+                margin: 5px;
+                padding: 5px;
+                font-family: 'Trebuchet MS';
+            }
+
+            .plusBtn {
+                font-size: 1.5em;
+                background-color: blue;
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            #newBtn {
+                background-color: green;
+                color: white;
+                border-radius: 5px;
+                padding: 5px;
+                cursor: pointer;
+            }
+
+            #emptyBtn,
+            .XBtn {
+                background-color: red;
+                color: white;
+                border-radius: 5px;
+                padding: 5px;
+                border-width: 1px;
+                cursor: pointer;
+            }
+
+            .card > * {
+                position: relative;
+            }
+
+            .card > img {
+                left: 14%;
+            }
+
+            .card > p {
+                text-align: center;
+            }
+
+            .card > button {
+                left: 44%;
+            }
+
+            div.item-card {
+                border: 1px solid lightgrey;
+                padding: 8px;
+                border-radius: 4px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <main id="items">
+                <!-- space to display product cards -->
+
+
+
+            </main>
+
+            <aside> <!-- right side column -->
+                <div id="newProdForm"> <!-- Form to add new products -->
+                    <form id="productForm">
+                        <table>
+                            <tr>
+                                <td> <label for="productName">Name:</label> </td>
+                                <td> <input type="text" id="productName" name="productName"> </td>
+                            </tr>
+                            <tr>
+                                <td> <label for="productPrice">Price:</label> </td>
+                                <td> <input type="number" id="productPrice" name="productPrice" step="0.01"> </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <button type="button" id="newBtn">New Article</button>
+                    </form>
+                </div>
+                <div id="shoppingCart"> <!-- Shopping cart -->
+                    <h2>Shopping Cart</h2>
+                    <div id="items-cart">
+                        
+                    </div>
+                    <hr>
+                    <p id="total-price">Total: </p>
+                    <button id="emptyBtn">Empty</button>
+                </div>
+            </aside>
+
+        </div>
+
+        <template id="temp">
+            <div class="card">
+                <img src="img/noimage.png" class="image" />
+                <p><strong class="item-name">Engine Oil ELF Evolution</strong></p>
+                <p class="item-price">13.49€</p>
+                <button class="plusBtn">+</button>
+            </div>
+        </template>
+
+        <template id="temp-cart">
+            <div class="item-card">
+                <span class="item-details">1 x Emergency light V16 - 14,99€</span>
+                <button class="XBtn">X</button>
+            </div>
+        </template>
+
+    </body>
+
+</html>

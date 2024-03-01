@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 33</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            const initial_amount = 1000;
+
+            if (!localStorage.getItem("money")) {
+
+                localStorage.setItem("money", initial_amount);
+
+            }
+
+            $("p#amount").text(`${localStorage.getItem("money")} €`);
+
+            $("button#income").on("click", function () {
+
+                let actual_amount = localStorage.getItem("money");
+
+                let add_amount = $("input[name='input']").val();
+
+                let new_amount = parseInt(actual_amount) + parseInt(add_amount);
+
+                localStorage.setItem("money", new_amount);
+
+                $("p#amount").text(`${localStorage.getItem("money")} €`);
+
+                $("input[name='input']").val("");
+
+            });
+
+            $("button#outcome").on("click", function () {
+
+                let actual_amount = localStorage.getItem("money");
+
+                let substract_amount = $("input[name='input']").val();
+
+                let new_amount = parseInt(actual_amount) - parseInt(substract_amount);
+
+                localStorage.setItem("money", new_amount);
+
+                $("p#amount").text(`${localStorage.getItem("money")} €`);
+
+                $("input[name='input']").val("");
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <input type="number" name="input"><br />
+    <button id="income">Income</button>
+    <button id="outcome">Outcome</button>
+    <p id="amount"></p>
+
+</body>
+
+</html>

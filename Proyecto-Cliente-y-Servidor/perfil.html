@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cliente y Servidor - Perfil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Merienda&display=swap">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="js/slick.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="css/modo_claro.css" />
+    <link rel="stylesheet" href="css/modo_oscuro.css" disabled="disabled" />
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/plantillas.css" />
+    <link rel="stylesheet" href="css/perfil.css" />
+
+    <script src="js/cargar_plantillas.js"></script>
+    <script src="js/cambiar_modo.js"></script>
+    <script src="js/perfil.js"></script>
+</head>
+
+<body>
+
+    <div id="dialogo-sesion-no-iniciada">
+
+        <p>No hay Sesión de Usuario Iniciada</p>
+
+    </div>
+
+    <!-- HEADER -->
+
+    <div id="header"></div>
+
+    <!-- FIN HEADER -->
+
+    <div id="contenedor-enlace">
+
+        <a href="index.html" id="enlace-volver">Volver a la Página Principal</a>
+
+    </div>
+
+    <!-- CONTENEDOR -->
+
+    <div id="contenedor">
+
+        <div id="perfil">
+
+            <form id="form-editar-foto" action="post" enctype="multipart/form-data">
+
+                <p id="texto-perfil">Perfil</p>
+
+                <img id="imagen-usuario"><br />
+
+                <input id="elegir-imagen" name="foto" type="file"></input>
+
+                <button id="modificar-imagen">Modificar Imagen</button>
+
+                <p id="error-imagen"></p>
+
+            </form>
+
+            <span>Nueva Contraseña: </span><input type="password" id="nueva-password">
+            
+            <p id="error-password"></p>
+
+            <span>Repetir Contraseña: </span><input type="password" id="repetir-password">
+
+            <p id="error-repetir-password"></p>
+
+            <button id="modificar-password">Modificar Contraseña</button>
+
+            <p id="password-cambiada"></p>
+
+        </div>
+
+        <div id="compras">
+
+            <p id="texto-compras">Historial de Compras</p>
+
+            <table id="tabla-compras">
+
+                <tbody>
+
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- FIN CONTENEDOR -->
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+
+    <!-- FIN FOOTER -->
+
+</body>
+
+</html>

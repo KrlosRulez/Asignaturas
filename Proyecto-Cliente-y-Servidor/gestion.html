@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cliente y Servidor - Gestión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Merienda&display=swap">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="js/slick.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="css/modo_claro.css" />
+    <link rel="stylesheet" href="css/modo_oscuro.css" disabled="disabled" />
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/plantillas.css" />
+    <link rel="stylesheet" href="css/gestion.css" />
+
+    <script src="js/cargar_plantillas.js"></script>
+    <script src="js/cambiar_modo.js"></script>
+    <script src="js/gestion.js"></script>
+</head>
+
+<body>
+
+    <div id="dialogo-sesion-no-iniciada">
+
+        <p>No tienes permisos para acceder</p>
+
+    </div>
+
+    <div id="dialogo-confirmar-eliminar" title="Confirmar Eliminar">
+
+        <p>¿Quieres eliminar este Artículo?</p>
+
+    </div>
+
+    <div id="dialogo-confirmar-eliminar-img" title="Confirmar Eliminar">
+
+        <p>¿Quieres eliminar esta Imagen?</p>
+
+    </div>
+
+    <div id="dialogo-formulario" title="Gestionar Artículos">
+
+        <span>Nombre:</span><br /><input type="text" name="nombre" id="input-nombre"><br /><br />
+
+        <span>Descripción</span><br /><textarea name="descripcion" id="input-descripcion" cols="30" rows="10"></textarea><br /><br />
+
+        <span>Precio:</span><br /><input type="number" name="precio" id="input-precio"><br /><br />
+        <!-- ParseDouble -->
+
+        <span>Imagen:</span><br /><input type="text" name="imagen" id="input-imagen"><br /><br />
+
+        <span>Stock:</span><br /><input type="number" name="stock" id="input-stock"><br /><br />
+        <!-- ParseInt -->
+
+        <span>Fecha de Lanzamiento:</span><br /><input type="date" name="fecha" id="input-fecha"><br /><br />
+
+        <span>Desarrollador:</span><br /><input type="text" name="desarrollador" id="input-desarrollador"><br /><br />
+
+        <span>Tipo de Artículo:</span><br /><select name="tipo" id="select-tipo"></select><br /><br />
+
+        <span>Plataforma:</span><br /><select name="plataforma" id="select-plataforma"></select><br /><br />
+
+        <span>Género</span><br /><select name="genero" id="select-genero"></select><br /><br />
+
+        <p id="datos-no-validos"></p><br />
+
+        <button id="boton-enviar"></button>
+
+    </div>
+
+    <div id="dialogo-formulario-img" title="Gestionar Imágenes">
+
+        <form id="form-img" action="post">
+
+            <span>Imagen:</span><br /><input type="file" name="foto" id="input-foto"><br /><br />
+
+            <p id="datos-no-validos-img"></p><br />
+
+            <button id="boton-enviar-img"></button>
+
+        </form>
+
+    </div>
+
+    <!-- HEADER -->
+
+    <div id="header"></div>
+
+    <!-- FIN HEADER -->
+
+    <div id="contenedor-enlace">
+
+        <a href="index.html" id="enlace-volver">Volver a la Página Principal</a>
+
+        <span id="ver-articulos">Gestionar Artículos</span>
+
+        <span id="ver-imagenes">Gestionar Imágenes</span>
+
+    </div>
+
+    <!-- CONTENEDOR -->
+
+    <div id="contenedor">
+
+        <div id="gestionar-articulos">
+
+            <p class="texto-gestionar">Gestionar Artículos</p>
+
+            <table id="tabla-articulos">
+
+                <tbody>
+
+                    
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div id="gestionar-imagenes">
+
+            <p class="texto-gestionar">Gestionar Imágenes</p>
+
+            <table id="tabla-imagenes">
+
+                <tbody>
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+    <!-- FIN CONTENEDOR -->
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+
+    <!-- FIN FOOTER -->
+
+</body>
+
+</html>

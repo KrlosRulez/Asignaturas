@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cliente y Servidor - Principal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Merienda&display=swap">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="js/slick.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="css/modo_claro.css" />
+    <link rel="stylesheet" href="css/modo_oscuro.css" disabled="disabled" />
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/plantillas.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="js/cargar_plantillas.js"></script>
+    <script src="js/cambiar_modo.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <div id="header"></div>
+
+    <!-- FIN HEADER -->
+
+    <!-- FILTROS -->
+
+    <div id="filtros">
+
+        <p id="texto-filtros">Filtros</p>
+
+        <div id="filtro-plataforma">
+
+            <p id="texto-filtro-plataforma">Plataforma</p>
+
+            <ul id="lista-plataformas"></ul>
+
+            <li class="item-plataforma"></li> <!-- SACAR TEMPLATE -->
+
+        </div>
+
+        <div id="filtro-precio">
+
+            <p id="texto-filtro-precio">Precio Máximo</p>
+
+            <div id="enviar-filtro-precio">
+
+                <input type="number" name="input-precio-maximo"><span> €</span>
+                <button id="filtrar-precio-maximo">Filtrar</button>
+
+            </div>
+
+        </div>
+
+        <div id="filtro-tipo">
+
+            <p id="texto-filtro-tipo">Tipo de Artículo</p>
+
+            <ul id="lista-tipos"></ul>
+
+            <li class="item-tipo"></li> <!-- SACAR TEMPLATE -->
+
+        </div>
+
+        <div id="filtro-genero">
+
+            <p id="texto-filtro-genero">Género</p>
+
+            <ul id="lista-generos"></ul>
+
+            <li class="item-genero"></li> <!-- SACAR TEMPLATE -->
+
+        </div>
+
+        <button id="eliminar-filtros">Eliminar Filtros</button>
+
+    </div>
+
+    <!-- FIN FILTROS -->
+
+    <!-- TARJETAS -->
+
+    <div id="contenedor-tarjetas"></div>
+
+
+    <div class="tarjeta">
+
+        <div class="imagen-tarjeta">
+
+            <img />
+
+        </div>
+
+        <p class="nombre-tarjeta"></p>
+
+        <p class="plataforma-tarjeta"></p>
+
+        <p class="tipo-tarjeta"></p>
+
+        <p class="stock-tarjeta"></p>
+
+        <p class="precio-tarjeta"></p>
+
+        <a class="detalles-tarjeta"></a>
+
+    </div>
+
+    <!-- FIN TARJETAS -->
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+
+    <!-- FIN FOOTER -->
+
+</body>
+
+</html>

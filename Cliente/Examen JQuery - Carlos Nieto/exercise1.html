@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+    <style>
+
+        .error {
+            border: 2px solid red;
+            background-color: yellow;
+        }
+
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            // Create Elements
+
+            var input_1 = $("<input>", {
+                "type": "number",
+                "name": "input1",
+            });
+
+            var input_2 = $("<input>", {
+                "type": "number",
+                "name": "input2",
+            });
+
+            var new_select = $("<select>", {
+                "name": "operation",
+                "disabled": true,
+            });
+
+            var select_option = $("<option>", {
+                "text": "Choose an operation",
+                "selected": "true",
+                "disabled": "true",
+            });
+
+            var addition = $("<option>", {
+                "value": "Add",
+                "text": "Add",
+            })
+
+            var substraction = $("<option>", {
+                "value": "Substract",
+                "text": "Substract",
+            })
+
+            var multiplication = $("<option>", {
+                "value": "Multiply",
+                "text": "Multiply",
+            })
+
+            var division = $("<option>", {
+                "value": "Divide",
+                "text": "Divide",
+            })
+
+            var p_result = $("<p>", {
+                "text": "Result: ",
+            })
+
+            select_option.appendTo(new_select);
+            addition.appendTo(new_select);
+            substraction.appendTo(new_select);
+            multiplication.appendTo(new_select);
+            division.appendTo(new_select);
+
+            $("body").append(input_1);
+            $("body").append(input_2);
+            $("body").append(new_select);
+            $("body").append(p_result);
+
+            $(document).on("input", "input[type='number']", function () {
+
+                let filled = true;
+
+                $("input[type='number']").each(function () {
+
+                    if ($(this).val() == "") {
+
+                        filled = false;
+
+                    }
+
+                });
+
+                if (filled) {
+
+                    $("select").attr({
+                        "disabled": false,
+                    });
+
+                } else {
+
+                    $("select").attr({
+                        "disabled": true,
+                    });
+
+                }
+
+            });
+
+            // Operations
+
+            $(document).on("change", "select", function () {
+
+                let result = 0;
+
+                switch ($(this).val()) {
+                    case "Add":
+
+                        result = parseInt($("input[name='input1']").val()) + parseInt($("input[name='input2']").val());
+
+                        break;
+
+                    case "Substract":
+
+                        result = parseInt($("input[name='input1']").val()) - parseInt($("input[name='input2']").val());
+
+                        break;
+
+                    case "Multiply":
+
+                        result = parseInt($("input[name='input1']").val()) * parseInt($("input[name='input2']").val());
+
+                        break;
+
+                    case "Divide":
+
+                        result = parseInt($("input[name='input1']").val()) / parseInt($("input[name='input2']").val());
+
+                        break;
+                }
+
+                $("p").text(`Result: ${result}`);
+
+            });
+
+            // Listeners
+
+            $(document).on("focusout", "input[type='number']", function () {
+
+                if ($(this).val() > 10) {
+
+                    $(this).addClass("error");
+
+                } else if ($(this).hasClass("error")) {
+
+                    $(this).removeClass("error");
+
+                }
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

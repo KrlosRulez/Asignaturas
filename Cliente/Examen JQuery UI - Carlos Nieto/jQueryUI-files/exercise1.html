@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Flags</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #big-container {
+            width: 705px;
+            height: 550px;
+            border: 1px solid black;
+        }
+
+        #flag-container {
+            width: 548px;
+            height: 205px;
+            border: 3px dotted red;
+            margin: 5px auto;
+            float: none;
+        }
+
+        .flag {
+            width: 100px;
+            height: 60px;
+            margin: 3px;
+            cursor: pointer;
+        }
+
+        .continent {
+            width: 170px;
+            height: 100px;
+            border: 2px dashed #ccc;
+            margin: 20px;
+            padding: 10px;
+            float: left;
+        }
+
+        .full {
+            background-color: salmon;
+        }
+    </style>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="../jquery-ui.css">
+    <script src="../jquery-ui.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            // Shuffle the flags randomly
+            var flagContainer = $('#flag-container');
+            var flags = flagContainer.children('.flag');
+
+            while (flags.length) {
+                flagContainer.append(flags.splice(Math.floor(Math.random() * flags.length), 1)[0]);
+            }
+
+            var africa_dropped = 0;
+            var america_dropped = 0;
+            var asia_dropped = 0;
+            var europe_dropped = 0;
+            var oceania_dropped = 0;
+
+            $(".flag").draggable({
+                revert: true,
+            });
+
+            $("#africa").droppable({
+
+                accept: ".africa",
+
+                drop: function (event, ui) {
+
+                    africa_dropped++;
+
+                    $(`.flag[title='${ui.draggable.attr("title")}']`).effect("explode");
+
+                    if (africa_dropped == 2) {
+
+                        $(this).droppable('destroy');
+
+                        $(this).addClass("full");
+
+                        $(this).find("h3").text("Full Continent");
+
+                    }
+
+                },
+
+            });
+
+            $("#america").droppable({
+
+                accept: ".america",
+
+                drop: function (event, ui) {
+
+                    america_dropped++;
+
+                    $(`.flag[title='${ui.draggable.attr("title")}']`).effect("explode");
+
+                    if (america_dropped == 2) {
+
+                        $(this).droppable('destroy');
+
+                        $(this).addClass("full");
+
+                        $(this).find("h3").text("Full Continent");
+
+                    }
+
+                },
+
+            });
+
+            $("#asia").droppable({
+
+                accept: ".asia",
+
+                drop: function (event, ui) {
+
+                    asia_dropped++;
+
+                    $(`.flag[title='${ui.draggable.attr("title")}']`).effect("explode");
+
+                    if (asia_dropped == 2) {
+
+                        $(this).droppable('destroy');
+
+                        $(this).addClass("full");
+
+                        $(this).find("h3").text("Full Continent");
+
+                    }
+
+                },
+
+            });
+
+            $("#europe").droppable({
+
+                accept: ".europe",
+
+                drop: function (event, ui) {
+
+                    europe_dropped++;
+
+                    $(`.flag[title='${ui.draggable.attr("title")}']`).effect("explode");
+
+                    if (europe_dropped == 2) {
+
+                        $(this).droppable('destroy');
+
+                        $(this).addClass("full");
+
+                        $(this).find("h3").text("Full Continent");
+
+                    }
+
+                },
+
+            });
+
+            $("#oceania").droppable({
+
+                accept: ".oceania",
+
+                drop: function (event, ui) {
+
+                    oceania_dropped++;
+
+                    $(`.flag[title='${ui.draggable.attr("title")}']`).effect("explode");
+
+                    if (oceania_dropped == 2) {
+
+                        $(this).droppable('destroy');
+
+                        $(this).addClass("full");
+
+                        $(this).find("h3").text("Full Continent");
+
+                    }
+
+                },
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="big-container">
+        <div id="flag-container">
+            <img src="flags/tn_us-flag.gif" title="USA" class="flag america">
+            <img src="flags/tn_ca-flag.gif" title="Canada" class="flag america">
+            <img src="flags/tn_br-flag.gif" title="Brazil" class="flag america">
+            <img src="flags/tn_uk-flag.gif" title="UK" class="flag europe">
+            <img src="flags/tn_fr-flag.gif" title="France" class="flag europe">
+            <img src="flags/tn_gm-flag.gif" title="Germany" class="flag europe">
+            <img src="flags/tn_ch-flag.gif" title="China" class="flag asia">
+            <img src="flags/tn_in-flag.gif" title="India" class="flag asia">
+            <img src="flags/tn_ja-flag.gif" title="Japan" class="flag asia">
+            <img src="flags/tn_as-flag.gif" title="Australia" class="flag oceania">
+            <img src="flags/tn_nz-flag.gif" title="New Zealand" class="flag oceania">
+            <img src="flags/tn_fj-flag.gif" title="Fiji" class="flag oceania">
+            <img src="flags/tn_sf-flag.gif" title="South Africa" class="flag africa">
+            <img src="flags/tn_ni-flag.gif" title="Nigeria" class="flag africa">
+            <img src="flags/tn_eg-flag.gif" title="Egypt" class="flag africa">
+        </div>
+        <div id="africa" class="continent">
+            <h3>Africa</h3>
+        </div>
+        <div id="america" class="continent ">
+            <h3>America</h3>
+        </div>
+        <div id="asia" class="continent">
+            <h3>Asia</h3>
+        </div>
+        <div id="europe" class="continent">
+            <h3>Europe</h3>
+        </div>
+        <div id="oceania" class="continent">
+            <h3>Oceania</h3>
+        </div>
+    </div>
+</body>
+
+</html>

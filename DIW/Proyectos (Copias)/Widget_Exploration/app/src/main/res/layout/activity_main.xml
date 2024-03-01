@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/left_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.33"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationX="80sp"
+            android:translationY="100sp"
+            tools:ignore="UselessParent,VisualLintBounds">
+
+            <RadioButton
+                android:id="@+id/radio_button_1"
+                android:layout_width="260sp"
+                android:layout_height="60sp"
+                android:checked="true"
+                android:text="@string/radiobutton_1"
+                android:textAlignment="center"
+
+                android:textSize="30sp"
+                tools:ignore="VisualLintBounds,TextSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/radio_button_2"
+                android:layout_width="260sp"
+                android:layout_height="60sp"
+                android:text="@string/radiobutton_2"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                tools:ignore="VisualLintBounds,TextSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/radio_button_3"
+                android:layout_width="260sp"
+                android:layout_height="60sp"
+                android:text="@string/radiobutton_3"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                tools:ignore="VisualLintBounds,TextSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/radio_button_4"
+                android:layout_width="260sp"
+                android:layout_height="60sp"
+                android:text="@string/radiobutton_4"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                tools:ignore="VisualLintBounds,TextSizeCheck" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/user_text"
+            android:layout_width="360sp"
+            android:layout_height="70sp"
+            android:hint="@string/escribe_aqu"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:translationX="-225sp"
+            android:translationY="380sp"
+            tools:ignore="Autofill,VisualLintBounds" />
+
+        <Button
+            android:id="@+id/boton_capturar"
+            android:layout_width="140sp"
+            android:layout_height="wrap_content"
+            android:text="@string/capturar"
+            android:translationX="-470sp"
+            android:translationY="480sp"
+            tools:ignore="VisualLintBounds" />
+
+        <TextClock
+            android:id="@+id/text_clock"
+            android:layout_width="240sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="103dp"
+            android:textSize="54sp"
+            android:translationX="-660sp"
+            android:translationY="580sp"
+            tools:ignore="VisualLintBounds" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/center_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.33"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/check_box_1"
+            android:layout_width="220sp"
+            android:layout_height="60sp"
+            android:text="@string/checkbox_1"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:translationX="100sp"
+            android:translationY="100sp"
+            tools:ignore="TextSizeCheck,VisualLintBounds" />
+
+        <CheckBox
+            android:id="@+id/check_box_2"
+            android:layout_width="220sp"
+            android:layout_height="60sp"
+            android:text="@string/checkbox_2"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:translationX="-120sp"
+            android:translationY="160sp"
+            tools:ignore="TextSizeCheck,VisualLintBounds" />
+
+        <CheckBox
+            android:id="@+id/check_box_3"
+            android:layout_width="220sp"
+            android:layout_height="60sp"
+            android:text="@string/checkbox_3"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:translationX="-340sp"
+            android:translationY="220sp"
+            tools:ignore="TextSizeCheck,VisualLintBounds" />
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="180sp"
+            android:layout_height="180sp"
+            android:src="@drawable/pedro"
+            android:translationX="-540sp"
+            android:translationY="400sp"
+            tools:ignore="ContentDescription,ImageContrastCheck,VisualLintBounds" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/right_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.33"
+        android:orientation="horizontal">
+
+        <Switch
+            android:id="@+id/right_switch"
+            android:layout_width="200sp"
+            android:layout_height="50sp"
+            android:checked="true"
+            android:clickable="true"
+            android:enabled="true"
+            android:text="@string/right_switch"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:translationX="100sp"
+            android:translationY="100sp"
+            tools:checked="true"
+            tools:ignore="KeyboardInaccessibleWidget,TextSizeCheck,VisualLintBounds" />
+
+        <TextView
+            android:id="@+id/copied_text"
+            android:layout_width="340sp"
+            android:layout_height="420sp"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:translationX="-160sp"
+            android:translationY="190sp"
+            tools:ignore="VisualLintBounds" />
+    </LinearLayout>
+</LinearLayout>

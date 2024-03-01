@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba Selectores</title>
+  <!-- Enlace a CDN para usar JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      // Get all the "p" tags.
+      console.log($("p"));
+
+      // Get the tag with "todo-list" id.
+      console.log($("#todo-list"));
+
+      // Get all the "p" elements and all the "li" with class "b".
+      console.log($("p, li.b"));
+
+      // Get all the tags in the webpage.
+      console.log($("*"));
+
+      // Get the elements with id "important" and class "a"
+      console.log($("#important.a"));
+
+      // Get the siblings of the "p" element just after the "ul".
+      console.log($("ul + p ~ *"));
+
+      // Get all the tags inside a "ul" with class "b".
+      console.log($("ul > .b"));
+
+      // Get the "p" element just after the "ul".
+      console.log($("ul + p"));
+
+      // Get the "p" element with classes "t1" and "t2".
+      console.log($("p.t1.t2"));
+
+      // ###################################################
+
+      // Get the first "p" element.
+      console.log($("p:first"));
+
+      // Get all the elements after the index 1.
+      console.log($(":gt(1)"));
+
+      // Get the last "p" element.
+      console.log($("p:last"));
+
+      // Get all the paragraphs but the one in the position 2.
+      console.log($("p:not(:eq(2))"));
+
+      // Get the even "p" elements.
+      console.log($("p:even"));
+
+      // Get the first element with class "a".
+      console.log($(".a:first"));
+
+      // Get the odd elements with class "b".
+      console.log($(".b:odd"));
+
+    });
+
+  </script>
+</head>
+<body>
+
+  <ul id="todo-list">
+    <li id="important" class="a">Estudiar</li>
+    <li class="b">Ir al gimnasio</li>
+    <li class="a">Comprar pan</li>
+    <li class="b">Enviar correos del trabajo</li>
+  </ul>
+
+  <p class="t1 t2">Párrafo 1</p>
+  <p class="t1">Párrafo 2</p>
+  <p class="t2">Párrafo 3</p>
+  <p class="t1 t2">Párrafo 4</p>
+  <p>Párrafo 5</p>
+
+</body>
+</html>

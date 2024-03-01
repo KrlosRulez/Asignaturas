@@ -1,0 +1,316 @@
+/* FILTROS */
+
+div#filtros {
+    border: 1px solid var(--c-color_borde);
+    background-color: var(--c-color_divs);
+    width: 23.5%;
+    /* height: 1200px; */
+    margin: 20px 1.8%;
+    border-radius: 20px;
+    /* position: fixed; */
+    /* z-index: 420; */
+}
+
+div#filtros > p#texto-filtros {
+    /* border: 1px solid green; */
+    width: 55%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 3.55vw;
+    /* font-family: "Merienda"; */
+    font-weight: bold;
+    color: var(--c-color_texto);
+}
+
+/* PLATAFORMAS */
+
+div#filtro-plataforma > p#texto-filtro-plataforma {
+    /* border: 1px solid orange; */
+    width: 60%;
+    font-size: 2.47vw;
+    /* font-family: "Merienda"; */
+    color: var(--c-color_texto);
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+div#filtro-plataforma > ul#lista-plataformas {
+    /* border: 1px solid red; */
+    width: 60%;
+    /* margin-left: 40px; */
+    margin: 0 auto;
+}
+
+ul#lista-plataformas > li.item-plataforma {
+    /* border: 1px solid blue; */
+    /* font-family: "Merienda"; */
+    font-size: 1.7vw;
+    color: var(--c-color_texto);
+    list-style: none;
+    margin: 5px 0px;
+    width: fit-content;
+    /* text-align: center; */
+    /* padding-left: 30px; */
+}
+
+ul#lista-plataformas > li.item-plataforma:hover {
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+/* FIN PLATAFORMAS */
+
+/* PRECIO MÁXIMO */
+
+div#filtro-precio > p#texto-filtro-precio {
+    /* border: 1px solid orange; */
+    width: 80%;
+    font-size: 2.46vw;
+    /* font-family: "Merienda"; */
+    color: var(--c-color_texto);
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+div#filtro-precio > div#enviar-filtro-precio {
+    /* border: 1px solid pink; */
+    width: 78%;
+    margin: 0 auto;
+}
+
+div#enviar-filtro-precio > input {
+    width: 40%;
+    height: 40px;
+    font-size: 1.6vw;
+    /* font-family: "Merienda"; */
+} 
+
+div#enviar-filtro-precio > span {
+    font-size: 1.6vw;
+    /* font-family: "Merienda"; */
+}
+
+div#enviar-filtro-precio > button#filtrar-precio-maximo {
+    width: 39%;
+    height: 40px;
+    background-color: dodgerblue;
+    color: white;
+    /* font-family: "Merienda"; */
+    font-size: 1.3vw;
+    border-radius: 4px;
+    /* margin: 0px 0px 4px 18px; */
+    margin-left: 4%; 
+}
+
+div#enviar-filtro-precio > button#filtrar-precio-maximo:hover {
+    cursor: pointer;
+    color: lightblue;
+}
+
+/* FIN PRECIO MÁXIMO */
+
+/* TIPO */
+
+div#filtro-tipo > p#texto-filtro-tipo, div#filtro-genero > p#texto-filtro-genero {
+    /* border: 1px solid orange; */
+    width: 75%;
+    font-size: 2.1vw;
+    /* font-family: "Merienda"; */
+    color: var(--c-color_texto);
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+div#filtro-tipo > ul#lista-tipos, div#filtro-genero > ul#lista-generos {
+    /* border: 1px solid red; */
+    width: 72%;
+    /* margin-left: 40px; */
+    margin: 0 auto;
+}
+
+ul#lista-tipos > li.item-tipo, ul#lista-generos > li.item-genero {
+    /* border: 1px solid blue; */
+    /* font-family: "Merienda"; */
+    font-size: 1.4vw;
+    color: var(--c-color_texto);
+    list-style: none;
+    margin: 5px 0px;
+    width: fit-content;
+    /* text-align: center; */
+    /* padding-left: 30px; */
+}
+
+ul#lista-tipos > li.item-tipo:hover, ul#lista-generos > li.item-genero:hover {
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+/* FIN TIPO */
+
+/* ELIMINAR FILTROS */
+
+button#eliminar-filtros {
+    width: 62%;
+    height: 40px;
+    background-color: red;
+    color: white;
+    /* font-family: "Merienda"; */
+    font-size: 1.3vw;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    margin-left: 19%;
+}
+
+button#eliminar-filtros:hover {
+    cursor: pointer;
+    color: lightpink;
+}
+
+/* FIN ELIMINAR FILTROS */
+
+div#filtro-plataformas,
+div#filtro-precio,
+div#filtro-tipo {
+    margin-bottom: 10%;
+}
+
+/* FIN FILTROS */
+
+/* TARJETAS */
+
+div#contenedor-tarjetas {
+    /* border: 1px solid black; */
+    width: 67.5%;
+    /* height: 1000px; */
+    margin-top: 20px;
+    padding: 0.7%;
+    border-radius: 16px;
+}
+
+div#contenedor-tarjetas > p#aviso-vacio {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 1.8vw;
+    /* font-family: Merienda; */
+    font-weight: bold;
+}
+
+div#contenedor-tarjetas > div.tarjeta {
+    border: 1px dashed var(--c-color_texto);
+    float: left;
+    width: 17.6%;
+    height: 73.2vh;
+    margin: 0% 0.8% 1.5% 0.8%;
+    overflow: visible;
+    background-color: var(--c-color_divs);
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px var(--c-color_texto);
+}
+
+div.tarjeta > div.imagen-tarjeta {
+    /* border: 1px solid orange; */
+    width: 100%;
+    height: 44.4%;
+}
+
+div.imagen-tarjeta > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 1px solid var(--c-color_borde);
+}
+
+div#contenedor-tarjetas > div.tarjeta > p.nombre-tarjeta {
+    /* border: 1px solid black; */
+    border-bottom: 2px dotted var(--c-color_borde);
+    color: var(--c-color_texto);
+    width: 88.6%;
+    height: 20.4%;
+    padding: 3% 6% 10.8% 6%;
+    text-align: center;
+    font-size: 1.43vw;
+    /* font-family: "Merienda"; */
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+div.tarjeta > p.plataforma-tarjeta {
+    /* border: 1px solid green; */
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 8%;
+    text-align: center;
+    font-size: 1.4vw;
+    /* font-family: "Merienda"; */
+    color: var(--c-color_texto);
+    font-weight: bold;
+}
+
+div.tarjeta > p.tipo-tarjeta {
+    /* border: 1px solid red; */
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 4.6%;
+    text-align: center;
+    font-size: 1.04vw;
+    /* font-family: "Merienda"; */
+    color: var(--c-color_texto);
+    font-weight: bold;
+}
+
+div.tarjeta > p.stock-tarjeta {
+    /* border: 1px solid pink; */
+    width: 68%;
+    margin: 0 auto;
+    margin-top: 4.6%;
+    text-align: center;
+    font-size: 0.98vw;
+    /* font-family: "Merienda"; */
+    color: var(--c-color_texto);
+    font-weight: bold;
+}
+
+div.tarjeta > p.precio-tarjeta {
+    /* border: 1px solid orange; */
+    width: 44.2%;
+    /* margin: 0 auto; */
+    margin: 4.4%;
+    text-align: center;
+    font-size: 1.16vw;
+    /* font-family: "Merienda"; */
+    color: var(--c-color_texto);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+div.tarjeta > a.detalles-tarjeta {
+    /* border: 1px solid lime; */
+    /* width: 50px; */
+    /* margin: 0 auto; */
+    /* margin: 8px 8px 40px 8px; */
+    text-align: center;
+    font-size: 1.16vw;
+    /* font-family: "Merienda"; */
+    color: dodgerblue;
+    text-decoration: underline;
+    font-weight: bold;
+
+    position: relative;
+    left: 70%;
+    top: -6.7%;
+}
+
+div.tarjeta > a.detalles-tarjeta:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+/* FIN TARJETAS */

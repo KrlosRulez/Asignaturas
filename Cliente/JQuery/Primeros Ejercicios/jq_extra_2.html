@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>DWEC-Task</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                
+                function updateTable () {
+
+                    $("table").append("<tr>Row</tr>");
+
+                    $("tr").append("<td>Column</td>");
+
+                }
+
+                updateTable();
+
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <table id="myTable" border="1">
+            <tr>
+              <td>Row1 cell1</td>
+              <td>Row1 cell2</td>
+            </tr>
+            <tr>
+              <td>Row2 cell1</td>
+              <td>Row2 cell2</td>
+            </tr>
+          </table>
+    </body>
+</html>

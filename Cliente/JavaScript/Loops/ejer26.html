@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 26</title>
+    <script>
+        window.onload = function () {
+            let arr = [], set = new Set();
+            let users = ["Lorenzo", "Jose", "Mariluz", "Mariluz", "Anne", "Lorenzo", "Jose", "Mariluz", "Mariluz", "Lola"];
+
+            for (let i = 0; i < users.length; i++) {
+                arr.push(users[i]);
+                set.add(users[i]);
+            }
+
+            let result;
+
+            console.time('Array');
+            result = arr.indexOf("Lola") !== -1;
+            console.timeEnd('Array');
+
+            console.time('Set');
+            result = set.has("Lola");
+            console.timeEnd('Set');
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

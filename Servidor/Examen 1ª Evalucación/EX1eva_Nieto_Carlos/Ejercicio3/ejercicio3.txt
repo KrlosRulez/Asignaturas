@@ -1,0 +1,9 @@
+Al pulsar el botón de editar de alguna fila existente en Autores.php:
+
+- Se envian por URL dos variables: "id_autor" que contiene el id del autor que se desea editar y "editar" que sirve para entrar en un isset
+
+- Se entra en (if (isset[$_GET['editar'])), que guarda en una variable la id del autor que se ha pasado por la URL, llama al método del CRUD "AutorById" con esa id como parámetro y guarda en variables todos los datos de ese autor en la BBDD (en este caso el único campo es "autor")
+
+- Al haber pulsado el botón de editar, se entra en los (isset($_GET['editar'])) de los campos del formulario lo que hace que los inputs se rellenen con las variables creadas en el paso anterior y que el "name" del botón submit sea "editar_autor"
+
+- Si se envia el formulario, se entrará en el if (isset($_POST["editar_autor"])), donde se guardará en variables la información de los campos del formulario, se creará un array con esas variables y se llamará al método del CRUD "editAutor" con ese array como parámetro

@@ -1,0 +1,11 @@
+1. Quin signe s'utilitza per nomenar una variable? On va situat?
+- Un $ al principi del nom de la variable
+
+2. Quins caràcters poden contenir els noms de varibles?
+- Caràters alfanumerics (A-Z, a-z, 0-9) y _
+
+3. Distingeixen entre majúscules y minúscules?
+- Si, $Nom i $nom son variables diferents
+
+4. Per a qué necessiten el signe = i el ; ?
+- = per a asignar valor a una variable i ; per a tancar una línia

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 35</title>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Merienda&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0 auto;
+            background-color: cyan;
+            font-family: Arial;
+        }
+
+        div#container {
+            border: 1px solid black;
+            width: 500px;
+            padding: 20px;
+        }
+
+        div#container>img {
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            margin: 10px 0px 0px 175px;
+        }
+
+        p {
+            margin: 10px 0px;
+        }
+
+        h1 {
+            margin: 15px 0px 15px 205px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var preferences = {
+                "bg-color": "cyan",
+                "font": "Arial",
+                "avatar": "LeBron.jpg",
+            };
+
+            if (!localStorage.getItem("preferences")) {
+
+                localStorage.setItem("preferences", JSON.stringify(preferences));
+
+            }
+
+            function reload_preferences() {
+
+                let actual_preferences = JSON.parse(localStorage.getItem("preferences"));
+
+                let color_options = $("select#bg-color > option");
+
+                color_options.each(function (e) {
+
+                    if ($(`select#bg-color > option:eq(${e})`).val() == actual_preferences["bg-color"]) {
+
+                        $(`select#bg-color > option:eq(${e})`).attr({
+                            "selected": "true",
+                        });
+
+                    }
+
+                });
+
+                let font_options = $("select#font > option");
+
+                font_options.each(function (e) {
+
+                    if ($(`select#font > option:eq(${e})`).val() == actual_preferences["font"]) {
+
+                        $(`select#font > option:eq(${e})`).attr({
+                            "selected": "true",
+                        });
+
+                    }
+
+                });
+
+                let avatar_options = $("select#avatar > option");
+
+                avatar_options.each(function (e) {
+
+                    if ($(`select#avatar > option:eq(${e})`).val() == actual_preferences["avatar"]) {
+
+                        $(`select#avatar > option:eq(${e})`).attr({
+                            "selected": "true",
+                        });
+
+                    }
+
+                });
+
+                $("img#avatar").attr({
+                    "src": `players/${actual_preferences["avatar"]}`,
+                });
+
+                $("*").css({
+                    "background-color": actual_preferences["bg-color"],
+                    "font-family": actual_preferences["font"],
+                });
+
+            }
+
+            reload_preferences();
+
+            //console.log($("select#bg-color > option"));
+
+            $("select#bg-color").on("change", function () {
+
+                let actual_preferences = JSON.parse(localStorage.getItem("preferences"));
+
+                let new_bg_color = $(this).find($("option:selected")).val();
+
+                actual_preferences["bg-color"] = new_bg_color;
+
+                localStorage.setItem("preferences", JSON.stringify(actual_preferences));
+
+                //console.log(actual_preferences["bg-color"]);
+
+                reload_preferences();
+
+            });
+
+            $("select#font").on("change", function () {
+
+                let actual_preferences = JSON.parse(localStorage.getItem("preferences"));
+
+                let new_font = $(this).find($("option:selected")).val();
+
+                actual_preferences["font"] = new_font;
+
+                localStorage.setItem("preferences", JSON.stringify(actual_preferences));
+
+                //console.log(actual_preferences["font"]);
+
+                reload_preferences();
+
+            });
+
+            $("select#avatar").on("change", function () {
+
+                let actual_preferences = JSON.parse(localStorage.getItem("preferences"));
+
+                let new_avatar = $(this).find($("option:selected")).val();
+
+                actual_preferences["avatar"] = new_avatar;
+
+                localStorage.setItem("preferences", JSON.stringify(actual_preferences));
+
+                //console.log(actual_preferences["avatar"]);
+
+                reload_preferences();
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <img id="avatar" src="players/LeBron.jpg" />
+
+        <h1>Header</h1>
+
+        <p>
+            Rerum inventore ducimus et reiciendis. Aliquid soluta possimus cum vitae ipsa sapiente ex. Aperiam aut
+            architecto doloremque. Nihil commodi, aliquam, velit non, animi in corrupti illo rem libero cumque expedita.
+            Alias voluptatum modi earum laborum quia doloribus dolor quam, ratione tenetur veritatis doloremque vel
+            mollitia quod fuga illo at. Fugiat vero architecto deleniti debitis minus soluta assumenda dolore ea
+            voluptatem?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, enim, temporibus delectus, aliquam earum
+            amet nemo voluptatibus saepe rerum maxime eum accusantium aut repellendus. Magnam sed culpa delectus ad ab.
+            Atque, aspernatur quod blanditiis sed architecto quisquam natus dignissimos id excepturi itaque repudiandae
+            autem harum sint impedit numquam odio neque nam enim veritatis dolorem accusamus modi voluptas! Incidunt,
+            explicabo eligendi?
+        </p>
+        <p>
+            Rerum inventore ducimus et reiciendis. Aliquid soluta possimus cum vitae ipsa sapiente ex. Aperiam aut
+            architecto doloremque. Nihil commodi, aliquam, velit non, animi in corrupti illo rem libero cumque expedita.
+            Alias voluptatum modi earum laborum quia doloribus dolor quam, ratione tenetur veritatis doloremque vel
+            mollitia quod fuga illo at. Fugiat vero architecto deleniti debitis minus soluta assumenda dolore ea
+            voluptatem?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, enim, temporibus delectus, aliquam earum
+            amet nemo voluptatibus saepe rerum maxime eum accusantium aut repellendus. Magnam sed culpa delectus ad ab.
+            Atque, aspernatur quod blanditiis sed architecto quisquam natus dignissimos id excepturi itaque repudiandae
+            autem harum sint impedit numquam odio neque nam enim veritatis dolorem accusamus modi voluptas! Incidunt,
+            explicabo eligendi?
+        </p>
+        <p>
+            Rerum inventore ducimus et reiciendis. Aliquid soluta possimus cum vitae ipsa sapiente ex. Aperiam aut
+            architecto doloremque. Nihil commodi, aliquam, velit non, animi in corrupti illo rem libero cumque expedita.
+            Alias voluptatum modi earum laborum quia doloribus dolor quam, ratione tenetur veritatis doloremque vel
+            mollitia quod fuga illo at. Fugiat vero architecto deleniti debitis minus soluta assumenda dolore ea
+            voluptatem?
+        </p>
+
+        <select id="bg-color">
+            <option value="cyan">cyan</option>
+            <option value="lime">lime</option>
+            <option value="yellow">yellow</option>
+        </select>
+
+        <select id="font">
+            <option value="Arial">Arial</option>
+            <option value="Trade Winds">Trade Winds</option>
+            <option value="Merienda">Merienda</option>
+        </select>
+
+        <select id="avatar">
+            <option value="LeBron.jpg">LeBron James</option>
+            <option value="Durant.jpg">Kevin Durant</option>
+            <option value="Bosh.jpg">Chris Bosh</option>
+        </select>
+
+    </div>
+
+</body>
+
+</html>

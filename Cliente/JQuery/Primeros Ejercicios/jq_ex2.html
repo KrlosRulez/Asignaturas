@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba Selectores</title>
+    <!-- Enlace a CDN para usar JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function () {
+
+      // Select all paragraphs with the class attribute.
+      console.log($("p[class]"));
+
+      // Select all paragraphs that contain at least one child.
+      console.log($("p:parent"));
+
+      // Select all paragraphs with the "paragraph1" class.
+      console.log($("p.paragraph1"));
+
+      // Select all paragraphs containing "Luigi".
+      console.log($("p:contains('Luigi')"));
+
+      // Select all paragraphs with a class beginning with "para".
+      console.log($("p[class^=para]"));
+
+      // Select all paragraphs with a class beginning with "para" and the align attribute containing "center".
+      console.log($("p[class^=para][align=center]"));
+
+      // Select all the visible "ul" elements.
+      console.log($("ul:visible"));
+
+      // Select all elements with no siblings.
+      console.log($(":only-child"));
+
+      // Select the "li" being the second element of an "ul".
+      console.log($("ul > li:eq(1)"));
+
+      // Select all the "ul" that contain a "li" with class "a".
+      console.log($("ul:has(li[class=a])"));
+
+      // Select the "li" being the last element of an "ul".
+      console.log($("ul > li:last"));
+
+    });
+
+    </script>
+</head>
+
+<body>
+
+  <ul id="list1">
+    <li class="a">Item 1</li>
+    <li class="b">Item 2</li>
+    <li class="a">Item 3</li>
+    <li class="b">Item 4</li>
+  </ul>
+
+  <p id="hero" class="class1">Mario</p>
+  <p class="class1"></p>
+  <p class="paragraph1">Luigi</p>
+  <div>
+    <p class="class2">Toad</p>
+  </div>
+  <p class="paragraph2" align="center">Bowser</p>
+  <p style="display: none;">Peach</p>
+
+</body>
+
+</html>

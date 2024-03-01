@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide/Show List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        div {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 5px;
+            width: 600px;
+            background-color: lightgray;
+            box-shadow: 5px 5px 5px lightgray; ;
+        }
+        h1 {
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+
+            var movies = $("div").length;
+
+            $("div").on("mouseenter", function () {
+
+                $(this).css({
+                    "background-color": "lightblue",
+                });
+
+            });
+
+            $("div").on("mouseleave", function () {
+                
+                $(this).css({
+                    "background-color": "lightgray",
+                });
+
+            });
+
+            for (let i = 0; i < movies; i++) {
+
+                $(`input[type='button']:eq(${i})`).on("click", function () {
+
+                    if ($(this).val() == "HIDE") {
+
+                        $(`div:eq(${i}) > h1, div:eq(${i}) > p`).css({
+                            display: "none",
+                        });
+
+                        $(this).val("SHOW");
+
+                    } else if ($(this).val() == "SHOW") {
+
+                        $(`div:eq(${i}) > h1, div:eq(${i}) > p`).css({
+                            display: "block",
+                        });
+
+                        $(this).val("HIDE");
+
+                    }
+
+                });
+
+            }
+           
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Batman Begins (2005)</h1>
+        <p>As a child, a young Bruce Wayne witnesses the death of his parents at the hands of a crazed criminal. As an adult, Bruce travels the world seeking the means to fight injustice. He lives amongst the boroughs of criminals and thieves in central Asia. Eventually, he meets a mysterious figure named Ra's Al Guhl and joins his gang called the League of Shadows. Using his training, he is able to defeat his trainer. Finally meeting up with his estate caretaker Alfred Pennyworth, Bruce Wayne returns to Gotham. There, he becomes the new head of Wayne Enterprises. Together, with the help of the C.E.O. of the Wayne Enterprises Applied Sciences division, a man name Lucius Fox, he dons a new persona: Batman. As Batman takes on the criminals and organized crime underworld of Gotham, a sinister new underbelly of the city is exposed, and a new class of criminal is born. Will Batman be the one to stop them all, or does Gotham need a hero with a face?</p>
+        <input type="button" value="HIDE"/>
+    </div>
+    <br/>
+    <div>
+        <h1>The Dark Knight (2008)</h1>
+        <p>One year after the events of Batman Begins (2008), Batman, Lieutenant James Gordon, and District Attorney Harvey Dent plan to launch an attack on the mob by arresting the shady accountant of the mob, Lau. Lau is abducted from his building by Batman and is thrown into jail. Lau divulges the secrets which results in almost all the mob bosses thrown in jail. The desperate mob bosses turn to The Joker, a sadistic psychopath with green hair, completely yellow teeth, and a custom purple suit. The Joker kills a judge, the Police Commissioner, and tries to kill the Mayor and Harvey. The acts of The Joker produces anarchy and chaos in the people of Gotham, forcing Batman to come to terms to which may seem to be his greatest test to fight injustice and come closer to the fine line between hero and vigilante.</p>
+        <input type="button" value="HIDE"/>
+    </div>
+    <br/>
+    <div>
+        <h1>The Dark Knight Rises (2012)</h1>
+        <p>Eight years after The Joker's Defeat and Batman took the fall for the murders committed by Harvey Dent, Gotham has a new enemy, Bane, a former member of the League of Shadows. Earlier, with Wayne Manor completely rebuilt, Bruce had become completely reclusive, rarely leaving the estate. Bane plans to continue the work of Ra's al Ghul by destroying Gotham. With allies being few and far between, Batman teams up with elusive jewel thief Selina Kyle, who may also be the key to stopping Bane. But whose side is she really on?</p>
+        <input type="button" value="HIDE"/>
+    </div>
+    <br/>
+    <div>
+        <h1>Batman v Superman. Dawn of Justice (2016)</h1>
+        <p>Eighteen months after the destructive battle in Metropolis (Man of Steel), Superman has become a controversial figure. Billionaire Bruce Wayne, who has covertly operated in Gotham City as vigilante Batman for nearly two decades, blames Superman for the mass casualties that resulted from his fight with General Zod. Among the casualties were many people working in Wayne Enterprises headquarters when the tower collapsed. Superman, in his public identity as Daily Planet journalist Clark Kent, sees Batman as dangerous and seeks to expose him.</p>
+        <input type="button" value="HIDE"/>
+    </div>
+    <br/>
+    <div>
+        <h1>Justice League (2017)</h1>
+        <p>The film opens with camera phone footage of Clark Kent/Superman (Henry Cavill) recorded by two kids. They interview him just after one of his heroic missions. One of the kids asks Superman what his favorite thing about Earth is. He smiles but the footage cuts off before he gives his answer.</p>
+        <input type="button" value="HIDE"/>
+    </div>
+    <br>
+    <div>
+        <h1>The Batman (2022)</h1>
+        <p>On Halloween, Gotham City mayor Don Mitchell Jr. is murdered by a serial killer calling himself the Riddler. Billionaire Bruce Wayne, who has operated for two years as the vigilante Batman, investigates alongside the Gotham City Police Department (GCPD). Lieutenant James Gordon discovers that the Riddler left a message for Batman, but commissioner Pete Savage berates him for allowing a vigilante to enter the crime scene and forces Batman to leave. The Riddler kills Savage and leaves another message for Batman.</p>
+        <input type="button" value="HIDE"/>
+    </div>
+</body>
+</html>

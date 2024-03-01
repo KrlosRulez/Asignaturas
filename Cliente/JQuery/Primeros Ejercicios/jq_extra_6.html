@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        div#container > div {
+            border: 1px solid black;
+            width: 400px;
+            height: 440px;
+            text-align: center;
+            float: left;
+        }
+
+        div#container {
+            width: 1206px;
+        }
+
+        .read {
+            background-color: cyan;
+        }
+
+        .not-read {
+            background-color: red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var libros = [
+
+                {
+                    title: "El Señor de los Anillos",
+                    author: "J.R.R. Tolkien",
+                    read: true,
+                    year: 1954,
+                    image: "images/image1.jpg",
+                },
+                {
+                    title: "Cien años de soledad",
+                    author: "Gabriel García Márquez",
+                    read: false,
+                    year: 1967,
+                    image: "images/image2.jpg",
+                },
+                {
+                    title: "Don Quijote de la Mancha",
+                    author: "Miguel de Cervantes",
+                    read: true,
+                    year: 1605,
+                    image: "images/psoed.jpg",
+                },
+                {
+                    title: "Harry Potter y la piedra filosofal",
+                    author: "J.K. Rowling",
+                    read: false,
+                    year: 1997,
+                    image: "images/image4.jpg",
+                },
+                {
+                    title: "1984",
+                    author: "George Orwell",
+                    read: true,
+                    year: 1949,
+                    image: "images/image5.jpg",
+                },
+                {
+                    title: "Orgullo y prejuicio",
+                    author: "Jane Austen",
+                    read: false,
+                    year: 1813,
+                    image: "images/image1.jpg",
+                },
+                {
+                    title: "Crónica de una muerte anunciada",
+                    author: "Gabriel García Márquez",
+                    read: true,
+                    year: 1981,
+                    image: "images/image2.jpg",
+                },
+                {
+                    title: "El gran Gatsby",
+                    author: "F. Scott Fitzgerald",
+                    read: false,
+                    year: 1925,
+                    image: "images/psoed.jpg",
+                },
+                {
+                    title: "Matar a un ruiseñor",
+                    author: "Harper Lee",
+                    read: true,
+                    year: 1960,
+                    image: "images/image4.jpg",
+                },
+                {
+                    title: "1984",
+                    author: "George Orwell",
+                    read: false,
+                    year: 1949,
+                    image: "images/image5.jpg",
+                },
+                {
+                    title: "Los juegos del hambre",
+                    author: "Suzanne Collins",
+                    read: true,
+                    year: 2008,
+                    image: "images/image1.jpg",
+                },
+                {
+                    title: "La sombra del viento",
+                    author: "Carlos Ruiz Zafón",
+                    read: false,
+                    year: 2001,
+                    image: "images/image2.jpg",
+                },
+                {
+                    title: "Anna Karenina",
+                    author: "León Tolstói",
+                    read: true,
+                    year: 1877,
+                    image: "images/psoed.jpg",
+                },
+                {
+                    title: "La Odisea",
+                    author: "Homero",
+                    read: false,
+                    year: -800,
+                    image: "images/image4.jpg",
+                },
+                {
+                    title: "El Código Da Vinci",
+                    author: "Dan Brown",
+                    read: true,
+                    year: 2003,
+                    image: "images/image5.jpg",
+                },
+                {
+                    title: "Drácula",
+                    author: "Bram Stoker",
+                    read: false,
+                    year: 1897,
+                    image: "images/image1.jpg",
+                },
+                {
+                    title: "El Principito",
+                    author: "Antoine de Saint-Exupéry",
+                    read: true,
+                    year: 1943,
+                    image: "images/image2.jpg",
+                },
+                {
+                    title: "El nombre de la rosa",
+                    author: "Umberto Eco",
+                    read: false,
+                    year: 1980,
+                    image: "images/psoed.jpg",
+                },
+                {
+                    title: "Rayuela",
+                    author: "Julio Cortázar",
+                    read: true,
+                    year: 1963,
+                    image: "images/image4.jpg",
+                },
+                {
+                    title: "Sapiens: De animales a dioses",
+                    author: "Yuval Noah Harari",
+                    read: false,
+                    year: 2011,
+                    image: "images/image5.jpg",
+                },
+                {
+                    title: "Los pilares de la Tierra",
+                    author: "Ken Follett",
+                    read: true,
+                    year: 1989,
+                    image: "images/image1.jpg",
+                },
+                {
+                    title: "La guerra y la paz",
+                    author: "León Tolstói",
+                    read: false,
+                    year: 1869,
+                    image: "images/image2.jpg",
+                },
+                {
+                    title: "Crimen y castigo",
+                    author: "Fiódor Dostoievski",
+                    read: true,
+                    year: 1866,
+                    image: "images/psoed.jpg",
+                },
+                {
+                    title: "El retrato de Dorian Gray",
+                    author: "Oscar Wilde",
+                    read: false,
+                    year: 1890,
+                    image: "images/image4.jpg",
+                },
+                {
+                    title: "El Hobbit",
+                    author: "J.R.R. Tolkien",
+                    read: true,
+                    year: 1937,
+                    image: "images/image5.jpg",
+                },
+                {
+                    title: "Mujer en punto cero",
+                    author: "Nawal El Saadawi",
+                    read: false,
+                    year: 1975,
+                    image: "images/image1.jpg",
+                },
+                {
+                    title: "La metamorfosis",
+                    author: "Franz Kafka",
+                    read: true,
+                    year: 1915,
+                    image: "images/image2.jpg",
+                },
+                {
+                    title: "El señor de las moscas",
+                    author: "William Golding",
+                    read: false,
+                    year: 1954,
+                    image: "images/psoed.jpg",
+                },
+                {
+                    title: "El silmarillion",
+                    author: "J.R.R. Tolkien",
+                    read: true,
+                    year: 1977,
+                    image: "images/image4.jpg",
+                },
+                {
+                    title: "Moby Dick",
+                    author: "Herman Melville",
+                    read: false,
+                    year: 1851,
+                    image: "images/image5.jpg",
+                },
+                {
+                    title: "Robocop",
+                    author: "Edward Neumeier",
+                    read: true,
+                    year: 1987,
+                    image: "images/image1.jpg",
+                },
+                {
+                    title: "Las uvas de la ira",
+                    author: "John Steinbeck",
+                    read: false,
+                    year: 1939,
+                    image: "images/image2.jpg",
+                },
+                {
+                    title: "Lo que el viento se llevó",
+                    author: "Margaret Mitchell",
+                    read: true,
+                    year: 1936,
+                    image: "images/psoed.jpg",
+                },
+                {
+                    title: "El lobo estepario",
+                    author: "Hermann Hesse",
+                    read: false,
+                    year: 1927,
+                    image: "images/image4.jpg",
+                },
+                {
+                    title: "En busca del tiempo perdido",
+                    author: "Marcel Proust",
+                    read: true,
+                    year: 1913,
+                    image: "images/image5.jpg",
+                },
+                {
+                    title: "El señor de las moscas",
+                    author: "William Golding",
+                    read: false,
+                    year: 1954,
+                    image: "images/image1.jpg",
+                },
+                {
+                    title: "El perfume",
+                    author: "Patrick Süskind",
+                    read: true,
+                    year: 1985,
+                    image: "images/image2.jpg",
+                },
+                {
+                    title: "La insoportable levedad del ser",
+                    author: "Milan Kundera",
+                    read: false,
+                    year: 1984,
+                    image: "images/psoed.jpg",
+                },
+                {
+                    title: "Los hermanos Karamazov",
+                    author: "Fiódor Dostoievski",
+                    read: true,
+                    year: 1880,
+                    image: "images/image4.jpg",
+                },
+                {
+                    title: "Cien años de soledad",
+                    author: "Gabriel García Márquez",
+                    read: false,
+                    year: 1967,
+                    image: "images/image5.jpg",
+                },
+            ];
+
+            function paintCards() {
+
+                for (let libro of libros) {
+
+                    let div_class = "";
+
+                    if (libro.read == true) {
+
+                        div_class = "read";
+
+                    } else {
+
+                        div_class = "not-read";
+
+                    }
+
+                    let div = $("<div>", {
+                        class: div_class,
+                    });
+
+                    let img = $("<img>", {
+                        width: 400,
+                        height: 250,
+                        src: libro.image,
+                    });
+
+                    div.append(img);
+
+                    let h1_title = $("<h1>", {
+                        text: libro.title,
+                    });
+
+                    div.append(h1_title);
+
+                    let p_author = $("<p>", {
+                        text: libro.author,
+                    });
+
+                    div.append(p_author);
+
+                    let button_remove = $("<button>", {
+                        class: "remove",
+                        text: "Remove",
+                    });
+
+                    button_remove.on("click", function () {
+
+                        for (let x of libros) {
+
+                            if (x.title == $(this).parent().find("h1").text()) {
+
+                                libros.splice(libros.indexOf(x), 1);
+
+                                $("div#container").empty();
+
+                                paintCards();
+
+                                break;
+
+                            }
+
+                        }
+
+                    });
+
+                    div.append(button_remove);
+
+                    div.on("click", function () {
+
+                        $(this).toggleClass("read not-read");
+
+                    });
+
+                    div.appendTo($("div#container"));
+
+                }
+
+            }
+
+            $("button#button-add").on("click", function (e) {
+
+                e.preventDefault();
+
+                let new_title = $("input[name='title']").val();
+                let new_author = $("input[name='author']").val();
+
+                let already_read = false;
+
+                if ($(":checkbox[name='already-read']:checked").length == 1) {
+
+                    already_read = true;
+
+                } else {
+
+                    already_read = false;
+
+                }
+
+                let new_libro = {
+                    title: new_title,
+                    author: new_author,
+                    read: already_read,
+                    image: "images/no-image.jpg",
+                }
+
+                libros.push(new_libro);
+
+                $("div#container").empty();
+
+                $("input[name='title']").val("");
+                $("input[name='author']").val("");
+
+                paintCards();
+
+            });
+
+            paintCards();
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <form id="add-book">
+        <span>Title: </span><input type="text" name="title"><br /><br />
+        <span>Author: </span><input type="text" name="author"><br /><br />
+        <span>Already Read: </span><input type="checkbox" name="already-read"><br /><br />
+        <button id="button-add">Add Book</button>
+    </form>
+
+    <h1>My Book List</h1>
+
+    <div id="container"></div>
+
+</body>
+
+</html>

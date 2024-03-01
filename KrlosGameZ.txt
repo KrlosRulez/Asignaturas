@@ -1,0 +1,52 @@
+##### MOVIDAS PARA PIJOS #######
+
+
+
+#################################
+
+
+##### AHORA #################
+
+
+
+################################
+
+##### MANDANGAS QUE HACER #####################
+
+- FRONTEND / PARTE PÚBLICA
+
+--- Mostrar Tarjetas *
+--- Hacer Filtros acumulativos *
+
+--- Mostrar Detalles => Falta Comprar
+--- Controlar Stock al Comprar
+
+- REGISTRO
+
+--- Insertar Datos en BBDD *
+--- Validar y Sanear datos (htmlentities o yo que se) *
+
+- LOGIN
+
+--- Validaciones *
+--- Gestión de Sesiones *
+--- Un Usuario Normal y otro Administrador *
+
+- USUARIO
+
+--- Ver Información de juegos comprados
+--- Modificar imagen de avatar y datos de perfil
+
+- ADMIN
+
+--- CRUD Juegos
+--- También tendrá un apartado de gestión del servidor para añadir, eliminar o editar todas las
+imágenes/archivos de la página web y de los viajes (subir/borrar) ???
+
+- MODO OSCURO
+
+- 2 Movidas de JQuery UI
+
+- 1 plugin de JavaScript / JQuery
+
+#################################################

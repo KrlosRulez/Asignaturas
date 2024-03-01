@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>The Avengers</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      // 5.
+
+      var bw_li = $("<li>", {
+        text: "Black Widow",
+      });
+
+      $(".avengers").append(bw_li);
+
+      var rw_li = $("<li>", {
+        text: "Red Widow",
+      });
+
+      $(".avengers").prepend(rw_li);
+
+      $("li:first").insertAfter("li:contains('Captain America')");
+
+      var page_title = $("title").text();
+
+      $("li:first").text(page_title);
+
+      var new_li = $("<li>", {
+        text: "Shrek",
+      });
+
+      new_li.insertBefore("li:contains('Thor')");
+
+      // 10.
+
+      function changeTags() {
+
+        let p_tags = $("p[class='name']");
+
+        for (let tag of p_tags) {
+
+          let p_text = tag.innerText;
+
+          let h1_tag = $("<h1>", {
+            text: p_text,
+          });
+
+          tag.replaceWith(h1_tag[0]); // Primera Posición = Etiqueta (<h1>Texto</h1>)
+
+        }
+
+      }
+
+      changeTags();
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <ul class="avengers">
+    <li>Ironman</li>
+    <li>Thor</li>
+    <li>Captain America</li>
+    <li>Hulk</li>
+  </ul>
+
+  <p class="name">JQuery</p>
+  <p class="name">is</p>
+  <p class="name">so</p>
+  <p class="name">Awesome</p>
+
+</body>
+
+</html>

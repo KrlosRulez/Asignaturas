@@ -1,0 +1,47 @@
+body {
+    font-family: 'Kalam';
+}
+
+div#contenedor {
+    /* border: 1px solid red; */
+    font-family: 'Trade Winds';
+    text-align: center;
+}
+
+div#contenedor > h1 {
+    /* border: 1px solid blue; */
+    color: red;
+    font-size: 70px;
+    margin: 40px 0px 20px 0px;
+}
+
+div#contenedor > h1 > span {
+    color: yellow;
+    text-shadow: 0.5px 0.5px 2px red, -0.5px -0.5px 2px red;
+}
+
+div#contenedor > a {
+    /* border: 1px solid pink; */
+    text-decoration: none;
+    font-size: 25px;
+    color: cyan;
+    text-shadow: 0.5px 0.5px 2px blue, -0.5px -0.5px 2px blue;
+    margin: 0px 15px 0px;
+}
+
+div#contenedor > a:hover {
+    color: blue;
+}
+
+p.mensaje {
+    font-size: 20px;
+}
+
+p.error {
+    font-size: 20px;
+    color: red;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 34</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            const initial_clicks = 0;
+            
+            if (!localStorage.getItem("clicks")) {
+
+                localStorage.setItem("clicks", initial_clicks);
+
+            }
+
+            $("p#click-amount").text(`You have clicked ${localStorage.getItem("clicks")} times`);
+
+            $("button#btn").on("click", function () {
+
+                localStorage.setItem("clicks", (parseInt(localStorage.getItem("clicks")) + parseInt(1)));
+
+                $("p#click-amount").text(`You have clicked ${localStorage.getItem("clicks")} times`);
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <button id="btn">CLICK ME!</button>
+
+    <p id="click-amount"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cliente y Servidor - Log In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Merienda&display=swap">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="js/slick.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="css/modo_claro.css" />
+    <link rel="stylesheet" href="css/modo_oscuro.css" disabled="disabled" />
+
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/plantillas.css" />
+    <link rel="stylesheet" href="css/login.css" />
+
+    <script src="js/cargar_plantillas.js"></script>
+    <script src="js/cambiar_modo.js"></script>
+    <script src="js/login.js"></script>
+</head>
+
+<body>
+
+    <div id="dialogo-sesion-iniciada">
+
+        <p>Ya hay una Sesión Iniciada</p>
+
+    </div>
+
+    <!-- HEADER -->
+
+    <div id="header"></div>
+
+    <!-- FIN HEADER -->
+
+    <!-- CONTENEDOR -->
+
+    <div id="contenedor">
+
+        <p id="tipo-formulario">Iniciar Sesión</p>
+
+        <label for="input-correo" id="label-correo">Correo Electrónico</label>
+        <input type="text" name="correo" id="input-correo" placeholder="ejemplo@ejemplo.com" />
+        <p id="error-correo"></p>
+
+        <label for="input-nombre" id="label-nombre" class="ocultar-registro">Nombre de Usuario</label>
+        <input type="text" name="nombre" id="input-nombre" class="ocultar-registro" />
+        <p id="error-nombre" class="ocultar-registro"></p>
+
+        <label for="input-password" id="label-password">Contraseña</label>
+        <input type="password" name="password" id="input-password" />
+        <p id="error-password"></p>
+
+        <label for="input-repetir-password" id="label-repetir-password" class="ocultar-registro">Repetir Contraseña</label>
+        <input type="password" name="repetir-password" id="input-repetir-password" class="ocultar-registro"/>
+        <p id="error-repetir-password" class="ocultar-registro"></p>
+
+        <button id="cambiar-form" value="login">No tienes una cuenta? Crea Una!</button>
+
+        <div id="contenedor-recordar">
+
+            <input type="checkbox" name="recordar" id="recordar-usuario">
+            <span id="texto-recordar">Recuerda mi Usuario!</span>
+
+        </div>
+
+        <button id="enviar-form" value="iniciar-sesion" disabled>Iniciar Sesión</button>
+
+    </div>
+
+    <!-- FIN CONTENEDOR -->
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+
+    <!-- FIN FOOTER -->
+
+</body>
+
+</html>

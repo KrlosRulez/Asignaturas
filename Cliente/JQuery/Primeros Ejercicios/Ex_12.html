@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 12</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function () {
+
+        $("button#get-value").on('click', function (event) {
+
+            event.preventDefault();
+
+            alert(`Input Value: ${$("input#input-text").val()}`);
+
+        });
+
+        $("button#set-value").on('click', function (event) {
+
+            event.preventDefault();
+
+            $("input#input-text").val($("input#input-new").val());
+
+        });
+
+        $("button#set-values").on('click', function (event) {
+
+            event.preventDefault();
+
+            $("#options").val(["Option 1", "Option 2"]);
+
+        });
+
+        $("button#get-check").on('click', function (event) {
+
+            event.preventDefault();
+
+            let checked_CB = $("input[type='checkbox']:checked");
+
+            let CB_values = "";
+
+            for (let i of checked_CB) {
+
+                CB_values += i.value + " ";
+
+            }
+
+            alert(`Checkbox Values: ${CB_values}`);
+
+        });
+
+    });
+
+    </script>
+</head>
+<body>
+
+    <form action="#">
+        <span>Text: </span><input type="text" name="input" id="input-text"><br /><br />
+        <span>Radio 1: </span><input type="radio" name="radio" id="radio-1" value="Radio 1" checked>
+        <span>Radio 2: </span><input type="radio" name="radio" id="radio-2" value="Radio 2" ><br /><br />
+        <span>Check 1: </span><input type="checkbox" name="check" id="check-1" value="Check 1">
+        <span>Check 2: </span><input type="checkbox" name="check" id="check-2" value="Check 2">
+        <span>Check 3: </span><input type="checkbox" name="check" id="check-3" value="Check 3"><br /><br />
+        <button id="get-value">Get Text Value</button><br /><br />
+        <span>Set Value: </span><input type="text" name="new-input" id="input-new">
+        <button id="set-value">Set New Text</button><br /><br />
+        <span>Radio Value: </span><select id="options" multiple>
+            <option value="Option 1">Option 1</option><option value="Option 2">Option 2</option><option value="Option 3">Option 3</option>
+        </select>
+        <button id="set-values">Set Multiple Values</button><br /><br />
+        <button id="get-check">Get Checkbox Values</button><br /><br />
+    </form>
+    
+</body>
+</html>

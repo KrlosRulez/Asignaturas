@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Proyecto_U1</string>
+    <string name="productos">Productos</string>
+    <string name="comprar">¿Comprado?</string>
+    <string name="a_adir_art_culo">Añadir Artículo</string>
+    <string name="nombre_del_art_culo">Nombre del artículo...</string>
+    <string name="a_adir">Añadir</string>
+    <string name="necesitado">¿Necesitado?</string>
+    <string name="editar_art_culo">Editar Artículo</string>
+    <string name="borrar_art_culo">Borrar Artículo</string>
+    <string name="editar">Editar</string>
+    <string name="nuevo_nombre">Nuevo Nombre...</string>
+</resources>

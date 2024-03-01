@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A1_1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      var inputs = $("input[placeholder]");
+
+      for (let i of inputs) {
+
+        i.value = i.placeholder;
+
+      }
+
+    });
+
+  </script>
+</head>
+<body>
+
+<form>
+  <label for="username">UserName:</label>
+  <input id="username"  name="username" placeholder="JohnDoe">
+  <label for="email">Email:</label>
+  <input id="email" type="email" name="email" placeholder="email@fake.com">
+  <input type="button" value="Login" />
+</form>
+
+</body>
+</html>

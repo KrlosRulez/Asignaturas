@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bienvenidos al Himalaya</title>
+        
+        <style>
+
+            /*
+
+            Orden de Especifidad
+
+            1 - <style> dentro de la etiqueta (style)
+            2 - Id (p#texto)
+            3 - Clase (p.patriotismo)
+            4 - Llamada a todas las etiquetas (p)
+
+            */
+
+            p {
+                color: blue;
+            }
+
+            p.patriotismo {
+                color: green;
+            }
+
+            p#texto {
+                color: yellow;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p id="texto" class="patriotismo" style="color: red;">
+            Viva España Viva España Viva España Viva España Viva España 
+            Viva España Viva España Viva España Viva España Viva España 
+            Viva España Viva España Viva España Viva España Viva España 
+            Viva España Viva España Viva España Viva España Viva España 
+        </p>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Widget_Exploration</string>
+    <string name="radiobutton_1">London</string>
+    <string name="radiobutton_2">Beijing</string>
+    <string name="radiobutton_3">New York</string>
+    <string name="radiobutton_4">European Empire</string>
+    <string name="escribe_aqu">Escribe Aquí</string>
+    <string name="capturar">CAPTURAR</string>
+    <string name="checkbox_1">Transparency</string>
+    <string name="checkbox_2">Tint</string>
+    <string name="checkbox_3">Resize</string>
+    <string name="right_switch">Switch</string>
+</resources>

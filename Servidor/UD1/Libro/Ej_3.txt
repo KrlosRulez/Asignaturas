@@ -1,0 +1,16 @@
+<html>
+    <title>
+        <head>Práctica 4</head>
+    </title>
+    <body>
+        <?php 
+            echo 'El meu nom és Ana.<br />'
+            echo "Tinc 20 anys."
+    </body>
+</html>
+
+Errores:
+
+- La etiqueta head y title están al revés
+- No hay ; al final de las lineas php
+- No hay etiqueta de cierre php

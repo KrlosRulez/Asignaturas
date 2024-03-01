@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 32</title>
+    <style>
+        div.card {
+            width: 250px;
+            height: 540px;
+            border: 2px dashed black;
+            margin: 10px;
+            float: left;
+            border-radius: 4px;
+            color: darkslategray;
+        }
+
+        img {
+            width: 100%;
+            height: 290px;
+            border-radius: 4px;
+            border-bottom: 2px solid red;
+        }
+
+        div.name {
+            /* border: 1px solid blue; */
+            width: 90%;
+            height: 100px;
+            margin-left: 10px;
+        }
+
+        div.name>p {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 40px;
+            margin: 0px;
+            font-family: 'Caveat', cursive;
+        }
+
+        ul>li {
+            font-family: 'Caveat', cursive;
+            font-size: 25px;
+            padding-left: 10px;
+        }
+
+        button {
+            width: 140px;
+            height: 60px;
+            margin-left: 55px;
+            /*font-size: 40px;
+            font-family: 'Caveat', cursive;*/
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            const players_obj = {
+                "player 1": {
+                    "id": 1,
+                    "img": "players/LeBron.jpg",
+                    "name": "LeBron James",
+                    "position": "Small Forward",
+                    "age": 38,
+                    "PPG": 28.3
+                },
+                "player 2": {
+                    "id": 2,
+                    "img": "players/Wade.jpg",
+                    "name": "Dwayne Wade",
+                    "position": "Shooting Guard",
+                    "age": 34,
+                    "PPG": 22.1
+                },
+                "player 3": {
+                    "id": 3,
+                    "img": "players/Durant.jpg",
+                    "name": "Kevin Durant",
+                    "position": "Small Forward",
+                    "age": 33,
+                    "PPG": 25.6
+                },
+                "player 4": {
+                    "id": 4,
+                    "img": "players/Bosh.jpg",
+                    "name": "Chris Bosh",
+                    "position": "Power Forward",
+                    "age": 31,
+                    "PPG": 19.7
+                },
+                "player 5": {
+                    "id": 5,
+                    "img": "players/Nowitzki.jpg",
+                    "name": "Dirk Nowitzki",
+                    "position": "Power Forward",
+                    "age": 41,
+                    "PPG": 15.4
+                }
+            };
+
+            if (!localStorage.getItem("players")) {
+
+                localStorage.setItem("players", JSON.stringify(players_obj));
+
+            }
+
+            function reload_data() {
+
+                let stored_players = JSON.parse(localStorage.getItem("players"));
+
+                $("div#card-container").empty();
+
+                for (let i in stored_players) {
+
+                    let player = stored_players[`${i}`];
+
+                    let new_card = $("<div>", {
+                        class: "card",
+                    });
+
+                    let img_div = $("<div>", {
+                        class: "image",
+                    });
+
+                    img_div.appendTo(new_card);
+
+                    let img_player = $("<img>", {
+                        src: player.img,
+                    });
+
+                    img_player.appendTo(img_div);
+
+                    let player_name = $("<div>", {
+                        class: "name",
+                    });
+
+                    player_name.html(`<p>${player.name}</p>`);
+
+                    player_name.appendTo(new_card);
+
+                    let un_list = $("<ul>");
+
+                    un_list.appendTo(new_card);
+
+                    let li_position = $("<li>", {
+                        text: player.position,
+                    });
+
+                    let li_age = $("<li>", {
+                        text: "Age: " + player.age,
+                    });
+
+                    let li_PPG = $("<li>", {
+                        text: "PPG: " + player.PPG,
+                    });
+
+                    li_position.appendTo(un_list);
+                    li_age.appendTo(un_list);
+                    li_PPG.appendTo(un_list);
+
+                    new_card.appendTo($("div#card-container"));
+
+                }
+
+            }
+
+            reload_data();
+
+            $("button#send").on("click", function (event) {
+
+                event.preventDefault();
+
+                let stored_players = JSON.parse(localStorage.getItem("players"));
+
+                let new_id = 0;
+
+                //console.log(stored_players);
+
+                for (let player in stored_players) {
+
+                    if (stored_players[`${player}`].id > new_id) {
+
+                        new_id = (stored_players[`${player}`].id);
+
+                    }
+
+                }
+
+                new_id += 1;
+
+                let new_name = $("input[name='pl-name']").val();
+                let new_position = $("input[name='pl-position']").val();
+                let new_age = $("input[name='pl-age']").val();
+                let new_PPG = $("input[name='pl-ppg']").val();
+
+                if (new_name != "" || new_position != "" || new_age != "" || new_PPG != "") {
+
+                    $("p#warning").text("");
+
+                    let new_player = {
+                        id: new_id,
+                        img: "players/No_Image.jpg",
+                        name: new_name,
+                        position: new_position,
+                        age: new_age,
+                        PPG: new_PPG,
+                    };
+
+                    stored_players[`player ${new_id}`] = new_player;
+
+                    localStorage.setItem("players", JSON.stringify(stored_players));
+
+                    $("input[name='pl-name']").val("");
+                    $("input[name='pl-position']").val("");
+                    $("input[name='pl-age']").val("");
+                    $("input[name='pl-ppg']").val("");
+
+                    reload_data();
+
+                } else {
+
+                    $("p#warning").text("There is empty fields");
+
+                }
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <form id="form-add">
+        <span>name: </span><input type="text" name="pl-name">
+        <span>position: </span><input type="text" name="pl-position">
+        <span>age: </span><input type="number" name="pl-age">
+        <span>PPG: </span><input type="number" name="pl-ppg">
+        <button id="send">Create new Player</button>
+        <p id="warning"></p>
+    </form>
+
+    <div id="card-container">
+
+    </div>
+
+</body>
+
+</html>

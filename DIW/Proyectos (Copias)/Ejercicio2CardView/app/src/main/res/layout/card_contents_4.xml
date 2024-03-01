@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/beer_pic"
+        android:layout_width="110dp"
+        android:layout_height="337dp"
+        android:contentDescription="@string/picture_of_the_beer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/mahou" />
+
+    <TextView
+        android:id="@+id/beer_name"
+        android:layout_width="213dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/mahou_5_estrellas"
+        android:textColor="@color/material_dynamic_neutral30"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="@id/beer_pic"
+        app:layout_constraintTop_toTopOf="@id/beer_pic"
+        tools:ignore="VisualLintBounds,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/beer_description"
+        android:layout_width="285dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="6dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/la_cl_sica"
+        android:textSize="32sp"
+        app:layout_constraintStart_toEndOf="@+id/beer_pic"
+        app:layout_constraintTop_toBottomOf="@+id/beer_name"
+        tools:ignore="VisualLintBounds,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/beer_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/_45_c_ntimos_por_lata"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/beer_pic"
+        app:layout_constraintTop_toBottomOf="@+id/beer_description"
+        tools:ignore="VisualLintBounds" />
+
+    <TextView
+        android:id="@+id/beer_slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="22dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/lo_mejor_para_la_pausa_del_bocadillo"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/beer_pic"
+        app:layout_constraintTop_toBottomOf="@+id/beer_price"
+        tools:ignore="VisualLintBounds" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

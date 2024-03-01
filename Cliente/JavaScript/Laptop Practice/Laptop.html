@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop Practice</title>
+    <script src="Laptop.js"></script>
+    <link rel="stylesheet" href="Laptop.css" />
+  </head>
+
+  <body>
+
+    <div id="left">
+
+      <form id="form-add">
+        <div id="content-add">
+          <h3>Add Laptop</h3>
+          <label>
+            <span>Brand:</span><br />
+            <select name="add-brand">
+              <option value="HP">HP</option>
+              <option value="Dell">Dell</option>
+              <option value="Lenovo">Lenovo</option>
+              <option value="Asus">Asus</option>
+              <option value="Acer">Acer</option>
+              <option value="Apple">Apple</option>
+              <option value="Microsoft">Microsoft</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Toshiba">Toshiba</option>
+              <option value="Sony">Sony</option>
+            </select>
+          </label>
+          <label>
+            <span>Model:</span><br />
+            <input type="text" name="add-model" id="add-model">
+          </label>
+          <span>RAM:</span><br /><br />
+          <label>
+            <input type="radio" name="add-ram" class="add-ram" value="4" checked><span>4 GB</span><br />
+          </label>
+          <label>
+            <input type="radio" name="add-ram" class="add-ram" value="8"><span>8 GB</span><br />
+          </label>
+          <label>
+            <input type="radio" name="add-ram" class="add-ram" value="16"><span>16 GB</span><br />
+          </label>
+          <label>
+            <span>Processor:</span><br />
+            <input type="text" name="add-processor" id="add-processor">
+          </label>
+          <label>
+            <span>Hard Disk:</span><br />
+            <input type="text" name="add-hard-disk" id="add-hard-disk">
+          </label>
+          <label>
+            <span>Price (€):</span><br />
+            <input type="number" name="add-price" id="add-price">
+          </label>
+        </div>
+        <label>
+          <button name="add-laptop" id="add-laptop">Save</button>
+        </label>
+      </form>
+
+      <form id="form-edit">
+        <h3>Edit Laptop</h3>
+        <label>
+          <span>Brand:</span><br />
+          <select name="edit-brand">
+            <option value="HP">HP</option>
+            <option value="Dell">Dell</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="Asus">Asus</option>
+            <option value="Acer">Acer</option>
+            <option value="Apple">Apple</option>
+            <option value="Microsoft">Microsoft</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Toshiba">Toshiba</option>
+            <option value="Sony">Sony</option>
+          </select>
+        </label>
+        <label>
+          <span>Model:</span><br />
+          <input type="text" name="edit-model" id="edit-model">
+        </label>
+        <span>RAM:</span><br /><br />
+        <label>
+          <input type="radio" name="edit-ram" class="edit-ram" value="4" checked><span>4 GB</span>
+        </label>
+        <label>
+          <input type="radio" name="edit-ram" class="edit-ram" value="8"><span>8 GB</span>
+        </label>
+        <label>
+          <input type="radio" name="edit-ram" class="edit-ram" value="16"><span>16 GB</span>
+        </label>
+        <label>
+          <span>Processor:</span><br />
+          <input type="text" name="edit-processor" id="edit-processor">
+        </label>
+        <label>
+          <span>Hard Disk:</span><br />
+          <input type="text" name="edit-hard-disk" id="edit-hard-disk">
+        </label>
+        <label>
+          <span>Price (€):</span><br />
+          <input type="number" name="edit-price" id="edit-price">
+        </label>
+        <label>
+          <button name="edit-laptop" id="edit-laptop">Confirm</button>
+        </label>
+      </form>
+
+    </div>
+
+    <div id="right">
+
+      <div id="filters">
+
+        <p id="order-p">Order by: <span id="order-brand">brand</span> | <span id="order-ram">RAM</span></p>
+
+        <input type="number" name="max-price" id="max-price" placeholder="Max Price"><button id="price-filter">Filter</button>
+
+        <span id="span-processor">Processor: </span><select id="select-processor"></select><button id="processor-filter">Filter</button>
+
+        <button id="remove-filters">Remove Filters</span>
+
+      </div>
+
+      <div id="cards">
+
+      </div>
+
+    </div>
+
+    <template id="template">
+      <div class="card">
+        <h2 class="brand">Brand: Dell</h2>
+        <p class="model">Model: XPS 13</p>
+        <p class="ram">RAM: 8GB</p>
+        <p class="processor">Processor: Intel Core i5</p>
+        <p class="hard-disk">Hard Disk: 256GB SSD</p>
+        <p class="price">Price: €1299.99</p>
+        <button class="edit-button">Edit</button>
+        <button class="remove-button">Remove</button>
+      </div>
+    </template>
+
+  </body>
+
+</html>

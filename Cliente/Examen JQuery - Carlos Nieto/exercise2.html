@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #redDiv {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        button {
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            const red_div = $("div#redDiv");
+
+            $("button#btn1").on("click", function () {
+
+                red_div.slideUp();
+
+            });
+
+            $("button#btn2").on("click", function () {
+
+                red_div.fadeToggle();
+
+            });
+
+            $("button#btn3").on("click", function () {
+
+                red_div.animate({
+                    "width": "+=200px",
+                }, 1000, "swing").animate({
+                    "height": "+=200px",
+                }, 2000, "swing").animate({
+                    "borderRadius": "120px",
+                }, 4000, "linear", function () {
+
+                    red_div.text("SOLVAM");
+
+                });
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <button id="btn1">Animation 1</button>
+    <button id="btn2">Animation 2</button>
+    <button id="btn3">Animation 3</button>
+    <br>
+    <div id="redDiv"></div>
+
+</body>
+
+</html>

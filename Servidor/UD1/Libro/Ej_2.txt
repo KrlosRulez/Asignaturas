@@ -1,0 +1,14 @@
+1. Entre quines etiquetes s'escriu el codi php?
+- Entre les etiquetes <?php & ?>
+
+2. Quines funcions s'utilitzen per a mostrar text en php?
+- echo y print
+
+3. Quina extensió té un arxiu php?
+- .php
+
+4. Per a què s'utilitza // i /*?
+- Per a comentar
+
+5. On hem de posar ; ?
+- Al final de les llinies

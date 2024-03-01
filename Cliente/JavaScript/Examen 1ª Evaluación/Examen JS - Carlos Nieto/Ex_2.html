@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <script src="Ex_2.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select,
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Choose Directions</h2>
+
+    <select id="directionsDropdown">
+        <option value="north">north</option>
+        <option value="east">east</option>
+        <option value="south">south</option>
+        <option value="west">west</option>
+    </select>
+
+    <div>
+        <input type="checkbox" id="north" checked>
+        <label for="north">North</label>
+
+        <input type="checkbox" id="east" checked>
+        <label for="east">East</label>
+
+        <input type="checkbox" id="south" checked>
+        <label for="south">South</label>
+
+        <input type="checkbox" id="west" checked>
+        <label for="west">West</label>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Calculadora_de_Gastos</string>
+    <string name="precio_del_gasto">Precio del gasto</string>
+    <string name="descripci_n_del_gasto">Descripción del gasto</string>
+    <string name="agregar_gasto">Agregar Gasto</string>
+    <string name="total_de_gastos">Total de gastos:</string>
+    <string name="_0">0</string>
+</resources>

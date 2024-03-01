@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <script src="registration_form.js"></script>
+    <style type="text/css">
+        body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+        }
+        form {
+            width: 600px;
+            margin: 20px auto 0 auto;
+        }
+        label {
+            float: left;
+            width: 200px;
+            font-weight: bold;
+        }
+        label[for="register_terms"] {
+            float: none;
+        }
+        input[type="text"],
+        input[type="password"],
+        textarea {
+            width: 360px;
+        }
+        input[type="checkbox"] {
+            margin-left: 200px;
+        }
+        input[type="submit"] {
+            margin: 20px 0 0 200px;
+            display: block;
+        }
+        .invalid {
+            background-color: red;
+        }
+        .valid {
+            background-color: lime;
+        }
+        span {
+            display: none;
+            font-weight: bold;
+            color: red;
+        }
+
+        #submit_button {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="POST" id="register">
+        <fieldset>
+            <legend>Register</legend>
+            <label for="register_name">Name:</label><input type="text" name="name" id="register_name"><br /><span id="error_name">* Name is a required field.</span><br />
+            <label for="register_surname">Surname:</label><input type="text" name="surname" id="register_surname"><br /><span id="error_surname">* Surname is a required field.</span><br />
+            <label for="register_email">Email:</label><input type="text" name="email" id="register_email"><br /><span id="error_email">* Invalid Email Address.</span><br />
+            <label for="register_password">Password:</label><input type="password" name="password" id="register_password"><br /><span id="error_password">* 6 characters min, 1 uppercase Letter, 1 lowercase letter & 1 digit.</span><br />
+            <label for="register_comments">Comments:</label><textarea name="comments" id="register_comments" rows="10"></textarea><br /><span id="error_comments">* Required. Can't exceed 50 characters.</span><br />
+            <input type="checkbox" name="terms" id="register_terms" value="1" checked><label for="register_terms">I accept the terms of service.</label><br /><span id="error_terms">* Must accept the terms</span><br />
+            <input type="submit" value="Submit" id="submit_button">
+        </fieldset>
+    </form>
+</body>
+</html>

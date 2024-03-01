@@ -1,0 +1,91 @@
+table, th, tr, td {
+    border: 1px dotted var(--c-color_borde);
+}
+
+div#contenedor {
+    margin: 1.8% 0% 1.8% 1.8%;
+    width: 94.5%;
+}
+
+div#contenedor-enlace {
+    /* border: 1px solid blue; */
+    width: 60%;
+    height: 5%;
+    margin: 1.8% 0% 0% 1.8%;
+}
+
+a#enlace-volver {
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 1.2vw;
+    font-weight: bold;
+    float: left;
+    margin-right: 5%;
+}
+
+a#enlace-volver:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+div#contenedor > div {
+    border-radius: 8px;
+}
+
+div#contenedor > div#gestionar-usuarios {
+    border: 1px solid var(--c-color_borde);
+    width: 100%;
+    text-align: center;
+    color: var(--c-color_texto);
+}
+
+div#gestionar-usuarios > table#tabla-usuarios {
+    width: 100%;
+}
+
+p.texto-gestionar {
+    font-size: 3vw;
+}
+
+th, td {
+    font-size: 1.2vw;
+}
+
+table#tabla-usuarios button {
+    color: white;
+    border-radius: 4px;
+    font-size: 1vw;
+}
+
+table#tabla-usuarios button:hover {
+    cursor: pointer;
+}
+
+table#tabla-usuarios button.formulario-agregar {
+    background-color: dodgerblue;
+    font-size: 1.4vw;
+}
+
+table#tabla-usuarios button.formulario-agregar:hover {
+    color: lightblue;
+}
+
+table#tabla-usuarios button.editar-usuario {
+    background-color: limegreen;
+}
+
+table#tabla-usuarios button.editar-usuario:hover {
+    color: lightgreen;
+}
+
+table#tabla-usuarios button.eliminar-usuario {
+    background-color: red;
+}
+
+table#tabla-usuarios button.eliminar-usuario:hover {
+    color: lightpink;
+}
+
+div#dialogo-formulario p {
+    color: red;
+}

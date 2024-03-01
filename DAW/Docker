@@ -1,0 +1,11 @@
+// Crear un contenedor al que se le pasa el contenido de antes de ":" a la carpeta de después de ":" (Si no existe lo crea)
+docker run -it --network redtest --name vol1 -v /root:/carlos ubuntu /bin/bash
+
+// Guardar información de un contenedor en un directorio con el nombre de antes de ":" (Si ya existe el volumen, lo vuelve a pasar detrás de ":")
+docker run -it --network redtest --name vol2 -v volumen1:/carlos ubuntu /bin/bash
+
+// Ver dónde está un volumen
+docker volume inspect datosbbdd
+
+// Password Root
+Alumno123|@#

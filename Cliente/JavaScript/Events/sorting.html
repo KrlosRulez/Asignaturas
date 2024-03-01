@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paging</title>
+    <script> window.onload = function () {
+
+        var libros = [
+          {
+            title: "El Señor de los Anillos",
+            author: "J.R.R. Tolkien",
+            read: true,
+            year: 1954,
+            image: "images/image1.jpg",
+          },
+          {
+            title: "Cien años de soledad",
+            author: "Gabriel García Márquez",
+            read: false,
+            year: 1967,
+            image: "images/image2.jpg",
+          },
+          {
+            title: "Don Quijote de la Mancha",
+            author: "Miguel de Cervantes",
+            read: true,
+            year: 1605,
+            image: "images/image3.jpg",
+          },
+          {
+            title: "Harry Potter y la piedra filosofal",
+            author: "J.K. Rowling",
+            read: false,
+            year: 1997,
+            image: "images/image4.jpg",
+          },
+          {
+            title: "Orgullo y prejuicio",
+            author: "Jane Austen",
+            read: false,
+            year: 1813,
+            image: "images/image1.jpg",
+          },
+          {
+            title: "Crónica de una muerte anunciada",
+            author: "Gabriel García Márquez",
+            read: true,
+            year: 1981,
+            image: "images/image2.jpg",
+          },
+          {
+            title: "El gran Gatsby",
+            author: "F. Scott Fitzgerald",
+            read: false,
+            year: 1925,
+            image: "images/image3.jpg",
+          },
+          {
+            title: "Matar a un ruiseñor",
+            author: "Harper Lee",
+            read: true,
+            year: 1960,
+            image: "images/image4.jpg",
+          },
+          {
+            title: "1984",
+            author: "George Orwell",
+            read: false,
+            year: 1949,
+            image: "images/image5.jpg",
+          },
+          {
+            title: "Cien años de soledad",
+            author: "Gabriel García Márquez",
+            read: false,
+            year: 1967,
+            image: "images/image2.jpg",
+          },
+          {
+            title: "Don Quijote de la Mancha",
+            author: "Miguel de Cervantes",
+            read: true,
+            year: 1605,
+            image: "images/image3.jpg",
+          },
+          {
+            title: "Orgullo y prejuicio",
+            author: "Jane Austen",
+            read: false,
+            year: 1813,
+            image: "images/image1.jpg",
+          },
+          {
+            title: "Crónica de una muerte anunciada",
+            author: "Gabriel García Márquez",
+            read: true,
+            year: 1981,
+            image: "images/image2.jpg",
+          },
+          {
+            title: "El gran Gatsby",
+            author: "F. Scott Fitzgerald",
+            read: false,
+            year: 1925,
+            image: "images/image3.jpg",
+          },
+          {
+            title: "Matar a un ruiseñor",
+            author: "Harper Lee",
+            read: true,
+            year: 1960,
+            image: "images/image4.jpg",
+          },
+          {
+            title: "1984",
+            author: "George Orwell",
+            read: false,
+            year: 1949,
+            image: "images/image5.jpg",
+          },
+        ];
+
+        var elementsPerPage = 3;
+        var currentPage = 1;
+
+        var pageNumber = Math.ceil(libros.length / elementsPerPage);
+
+        console.log(pageNumber);
+
+        function getSlice(page) {
+
+          var startSlice = (page - 1) * elementsPerPage;
+          var endSlice = startSlice + elementsPerPage;
+
+          return libros.slice(startSlice, endSlice);
+
+          console.log(startSlice);
+
+        }
+
+        var bookList = document.querySelector("#book-list");
+        var bookTemplate = document.getElementById("book-template").content;
+
+        function drawCards(bookArray) {
+
+          bookList.innerHTML = "";
+
+          bookArray.forEach(function (bookData) {
+
+            const myBook = bookTemplate.cloneNode(true);
+
+            var myTitle = myBook.querySelector(".title");
+
+            myTitle.innerText = bookData.title;
+
+            var myAuthor = myBook.querySelector(".author");
+
+            myAuthor.innerText = bookData.author;
+
+            var myYear = myBook.querySelector(".year");
+
+            myYear.innerText = bookData.year;
+
+            bookList.appendChild(myBook);
+
+          });
+
+        }
+
+        function sortBooks (a, b) {
+
+            if (a.title > b.title) {
+
+                return 1;
+
+            } else if (a.title < b.title) {
+
+                return - 1;
+
+            } else {
+
+                return 0;
+
+            }
+
+        }
+
+        libros.sort(sortBooks);
+
+        console.log(libros);
+
+        drawCards(libros);
+
+      } </script>
+    <style>
+
+      div.book {
+        border: 1px solid black;
+        width: 300px;
+        height: 160px;
+        float: left;
+        margin: 20px;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section>
+        <div id="book-list"></div>
+    </section>
+    <template id="book-template">
+      <div class="book">
+        <h2 class="title">Book Title</h2>
+        <h3 class="author">By Author</h3>
+        <p class="year">2023</p>
+      </div>
+    </template>
+  </body>
+</html>

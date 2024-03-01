@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Hola Mon</title>
+    </head>
+    <body>
+        <?php 
+            $dia=date("d");
+            if ($dia<=10) {
+                echo "lloc actiu";
+            }
+            else {
+                echo "lloc fora de servici";
+            }
+        ?>
+    </body>
+</html>
+
+L7 - Crea una variable dia que guarda el dia de hoy
+L8 - Compara si el dia de hoy es menor o igual a 10
+L9 - Si el dia es menor a 10 se imprime "lloc actiu"
+L12 - Si no, se imprime "lloc fora de servici"

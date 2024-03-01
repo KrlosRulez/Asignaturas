@@ -1,0 +1,80 @@
+table, th, tr, td {
+    border-top: 1px dotted var(--c-color_borde);
+    border-bottom: 1px dotted var(--c-color_borde);
+}
+
+div#contenedor {
+    margin: 1.8% 0% 1.8% 1.8%;
+    width: 94.5%;
+}
+
+div#contenedor-enlace {
+    /* border: 1px solid blue; */
+    width: 18%;
+    height: 5%;
+    margin: 1.8% 0% 0% 1.8%;
+}
+
+a#enlace-volver {
+    /* border: 1px solid red; */
+    /* width: 15%; */
+    /* height: 5%; */
+    /* font-family: Merienda; */
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 1.2vw;
+    font-weight: bold;
+    display: block;
+}
+
+a#enlace-volver:hover {
+    color: blue;
+}
+
+div#contenedor > div {
+    border-radius: 8px;
+}
+
+div#contenedor > div#carrito {
+    border: 1px dashed var(--c-color_borde);
+    width: 100%;
+    margin-left: 1%;
+    float: right;
+    text-align: center;
+    color: var(--c-color_texto);
+}
+
+div#carrito > table {
+    width: 100%;
+}
+
+div#carrito > p#texto-carrito {
+    font-size: 3vw;
+}
+
+div#carrito button {
+    width: 60%;
+    color: white;
+    font-size: 1.2vw;
+    border-radius: 6px;
+}
+
+div#carrito button:hover {
+    cursor: pointer;
+}
+
+div#carrito button.comprar-articulo {
+    background-color: limegreen;
+}
+
+div#carrito button.comprar-articulo:hover {
+    color: lightgreen;
+}
+
+div#carrito button.eliminar-articulo {
+    background-color: red;
+}
+
+div#carrito button.eliminar-articulo:hover {
+    color: lightpink;
+}

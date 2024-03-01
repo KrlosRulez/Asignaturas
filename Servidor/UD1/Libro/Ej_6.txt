@@ -1,0 +1,14 @@
+1. Variable=2;
+- Falta el $
+
+2. $ variable = 2;
+- No pot haver espais en blanc
+
+3. Variable$=2;
+- El $ te que estar abans del nom de la variable
+
+4. $Nom de la variable=2;
+- No pot haver espais en blanc
+
+5. $_variable 2;
+- Falta el =

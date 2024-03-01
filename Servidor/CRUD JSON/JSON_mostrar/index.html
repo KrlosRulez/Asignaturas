@@ -1,0 +1,54 @@
+<html>
+	<head>
+		  <link rel="stylesheet" type="text/css" href="estilo.css">
+		<script src="js/jquery-3.4.1.min.js" type="text/javascript">
+		</script>
+		
+		<script src="js/jquery-ui-1.12.1.custom/jquery-ui.js" type="text/javascript">
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+
+				$("#submit").on("click",function(){
+					 $.ajax({
+					   type: "GET",
+					   url: "php/users.php",
+
+					   success: function (resultado){
+						    var users = jQuery.parseJSON(resultado);
+							for (var x of users) {
+								pintar(x);
+						}
+					   },
+					   error: function(xhr){
+							alert("Atencion: se ha producido un error");
+							$("#mensaje1").append(xhr.statusText + xhr.responseText);
+					   },
+
+				   }); 
+				}); 
+				
+				function pintar(x){
+					var codigo = JSON.stringify(x.codigo);
+					$("<div id='users'><div>"+x.codigo+"</div><div>"+x.user+"</div><div>"+x.email+"</div></div>" ).appendTo( "#bloque" );					
+				}
+				
+
+		});
+		</script>
+	</head>
+	
+	<body>
+		<center>
+		<form id="my_form">
+			<br>
+			<button type="button" id="submit">Mostrar usuarios</button>
+		</form>	
+		</center>
+		<div id="mensaje1"></div>
+		<div id="bloque"></div>
+	</body>
+</html>
+
+

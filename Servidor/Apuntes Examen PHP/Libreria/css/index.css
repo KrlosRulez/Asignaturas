@@ -1,0 +1,24 @@
+body {
+    font-family: 'Kalam';
+}
+
+div.contenedor {
+    text-align: center;
+    padding-top: 80px;
+}
+
+div.contenedor * {
+    font-family: 'Kalam';
+}
+
+div.contenedor > h1 {
+    font-size: 40px;
+}
+
+div.contenedor > form > * {
+    font-size: 25px;
+}
+
+p.mensaje {
+    font-size: 20px;
+}

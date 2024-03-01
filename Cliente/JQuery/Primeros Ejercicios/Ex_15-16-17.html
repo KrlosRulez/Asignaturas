@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 15-16-17</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            // 15.
+
+            var opt_1 = $("<option>", {
+                text: "3",
+            });
+
+            var opt_2 = $("<option>", {
+                text: "4",
+            });
+
+            opt_1.appendTo($("select"));
+            opt_2.appendTo($("select"));
+
+            // 16.
+
+            $("select:eq(0)").on("change", function (e) {
+
+                console.log("new_select");
+
+                var opt_3 = $("<option>", {
+                    text: "5",
+                });
+
+                var opt_4 = $("<option>", {
+                    text: "6",
+                });
+
+                var opt_5 = $("<option>", {
+                    text: "7",
+                });
+
+                var opt_6 = $("<option>", {
+                    text: "8",
+                });
+
+                var new_select = $("<select>");
+
+                console.log(new_select);
+
+                opt_3.appendTo(new_select);
+                opt_4.appendTo(new_select);
+                opt_5.appendTo(new_select);
+                opt_6.appendTo(new_select);
+
+                new_select.appendTo($("body"));
+
+            });
+
+            // 17.
+
+            $("button#button").on("click", function () {
+
+                $(this).text("Button Clicked!");
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <select>
+        <option>1</option>
+        <option>2</option>
+    </select>
+
+    <button id="button">Click Me!</button>
+    
+</body>
+</html>

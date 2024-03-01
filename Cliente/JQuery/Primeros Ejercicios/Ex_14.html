@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 14</title>
+    <style>
+
+        .active {
+            background-color: lime;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var div_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper leo diam, vitae fermentum erat lacinia quis. Praesent eget purus ornare, maximus massa eu, ultrices lectus. Aenean id fermentum arcu. Donec non pellentesque nunc. Aliquam ornare vitae lorem ut tempus. Ut nulla mi, commodo eget";
+
+            var div = $("<div>", {
+                width: 200,
+                height: 200,
+                text: div_text,
+            });
+
+            div.appendTo($("body"));
+
+            $("div")
+            .on("click", function (e) {
+
+                $(this).off("mouseover mouseout");
+
+                $(this).text("Viva el Betis");
+
+            })
+            .on("mouseover mouseout", function (e) {
+
+                $(this).toggleClass("active");
+
+            })
+
+        });
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

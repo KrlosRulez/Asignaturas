@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+    <style>
+
+    .hidden {
+        visibility: hidden;;
+    }
+
+    .socials {
+        border: 10px solid green;
+    }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function () {
+
+        //$(".socials").addClass("hidden");
+
+        /* if ($(".socials").hasClass("hidden")) {
+
+            alert("There are hidden images");
+
+        } else {
+
+            alert("All images are visible");
+            
+        } */
+
+        /* if ($(".socials").is("socials")) {
+
+            alert("There are hidden images");
+
+        } else {
+
+            alert("All images are visible");
+
+        } */
+
+        $(".socials").css({
+            "border": "10px solid red",
+        });
+
+        $(".socials").removeClass("hidden");
+
+        $(".share-button").click(function () {
+            $(".socials").toggleClass("hidden");
+        });
+
+
+    });
+
+    </script>
+</head>
+
+<body>
+
+    <button class="share-button">Share</button><br />
+    <img src="pedro.png" class="socials" width="350" />
+    <img src="pedro.png" class="socials hidden" width="350" />
+    <img src="pedro.png" class="socials" width="350" />
+
+</body>
+
+</html>
